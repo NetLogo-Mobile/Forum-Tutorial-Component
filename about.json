@@ -1,4 +1,5 @@
 {
   "name": "Empty Theme",
+  "component": true,
   "about_url": "https://github.com/NetLogo-Mobile/Forum-Theme-Component"
 }
