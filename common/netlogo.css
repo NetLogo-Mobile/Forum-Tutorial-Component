@@ -1,0 +1,23 @@
+.hljs-built_in
+{
+    font-weight: normal;
+    color: #0000AA;
+}
+
+.hljs-keyword
+{
+    font-weight: normal;
+    color: #007F69;
+}
+
+.hljs-title.function_
+{
+    font-weight: normal;
+    color: #660096
+}
+
+.hljs-literal
+{
+    font-weight: normal;
+    color: #963700;
+}
