@@ -33,6 +33,19 @@ async function showTutorial(steps) {
 	// Load the driver
 	await loadScript(settings.theme_uploads_local.driver_js);
 	const driver = window.driver.js.driver;
+	// Async Tour
+	let newsteps = steps.map( (step) => {
+	  if(step.popover.hasOwnProperty("nextClick")){
+	   const hopeElement = step.popover?.hopeElement;
+	   if (hopeElement == undefined) return step
+	   step.popover.onNextClick = function(){
+	     document.querySelector(step.popover.nextClick).click()
+	     myDriver.moveNext()
+	   }
+	  }
+	  return step
+	})
+	console.log(newsteps)
 	// Show the tutorial
 	const driverConfig = {
 		doneBtnText: locale("done"),
@@ -40,14 +53,15 @@ async function showTutorial(steps) {
 		prevBtnText: locale("prev"),
 		allowClose: false,
 		allowKeyboardControl: true,
-		steps: steps,
+		steps: newsteps,
 		onCloseClick: () => {
 			status.Cancelled++;
 			saveStatus();
 		}
 	};
 	console.log(driverConfig);
-	driver(driverConfig).drive();
+	const myDriver = driver(driverConfig)
+	myDriver.drive();
 }
 
 // Tutorial statuses
