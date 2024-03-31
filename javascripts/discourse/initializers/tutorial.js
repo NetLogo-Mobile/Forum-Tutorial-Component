@@ -3,6 +3,7 @@ import { apiInitializer } from "discourse/lib/api";
 
 // Load the tutorial driver script
 async function loadTutorial() {
+	window.tutorialTranslate = (key) => I18n.t(themePrefix(key));
 	// Load the driver
 	await loadScript(settings.theme_uploads_local.driver_js);
 	const driver = window.driver.js.driver;
