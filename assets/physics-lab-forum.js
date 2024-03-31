@@ -1,20 +1,16 @@
+const locale = tutorialLocale;
 window.discourseTutorial = {
-    "forceStartSelectors": {
-      "/src/": "#navStart"
-    },
-    "pagelist": {
+    // For logged users, which tutorials should we map to which pages?
+    "loggedMappings": {
+      "/": "messages",
       "/t/topic/314": "messages"
     },
-    "initConfig": {
-      "stageBackground": "#cccccc",
-      "doneBtnText": "完成",
-      "closeBtnText": "关闭",
-      "nextBtnText": "下一步",
-      "prevBtnText": "上一步",
-      "allowClose": false,
-      "keyboardControl": true
+    // For unlogged users
+    "unloggedMappings": {
+      "/t/topic/314": "messages"
     },
-    "pageDriversMap": {
+    // Tutorials
+    "tutorials": {
       "messages": [
         {
           "element": "#current-user",
