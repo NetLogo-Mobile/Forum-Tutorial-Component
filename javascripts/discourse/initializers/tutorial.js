@@ -2,14 +2,14 @@ import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
 // Load the tutorial driver script
 async function loadTutorial(api) {
-	// Stop it if the user closed too many times
-	if (Cancelled >= 3) return;
 	// Load the config
 	window.tutorialLocale = (key) => I18n.t(themePrefix(key));
 	await loadScript(settings.theme_uploads_local.physics_lab);
 	const config = window.discourseTutorial;
 	// Load the status
 	loadStatus();
+	// Stop it if the user closed too many times
+	if (status.Cancelled >= 3) return;
 	// Try to decide if we should show a tutorial
 	const logged = api.getCurrentUser() !== null;
 	const mappings = logged ? config.loggedMappings : config.unloggedMappings;
