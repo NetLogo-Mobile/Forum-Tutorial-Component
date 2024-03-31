@@ -27,7 +27,7 @@ async function loadTutorial(api) {
 	await loadScript(settings.theme_uploads_local.driver_js);
 	const driver = window.driver.js.driver;
 	// Show the tutorial
-	driver({
+	const driverConfig = {
 		doneBtnText: locale("done"),
 		nextBtnText: locale("next"),
 		prevBtnText: locale("prev"),
@@ -38,7 +38,9 @@ async function loadTutorial(api) {
 			status.Cancelled++;
 			saveStatus();
 		}
-	})
+	};
+	console.log(driverConfig);
+	driver(driverConfig);
 }
 
 // Tutorial statuses
