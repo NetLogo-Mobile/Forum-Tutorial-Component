@@ -1,5 +1,8 @@
 {
-  "name": "NetLogo Syntax Highlighting",
+  "name": "NetLogo/Physics Lab Forum: Tutorial Component",
   "component": true,
-  "about_url": "https://github.com/NetLogo-Mobile/Forum-Theme-Component"
+  "assets": {
+    "driver_js": "assets/driver.1.0.1.min.js"
+  },
+  "about_url": "https://github.com/NetLogo-Mobile/Forum-Tutorial-Component"
 }
