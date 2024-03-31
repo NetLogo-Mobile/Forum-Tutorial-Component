@@ -4,6 +4,7 @@ import { apiInitializer } from "discourse/lib/api";
 async function loadTutorial(api) {
 	// Load the config
 	window.tutorialLocale = (key) => I18n.t(themePrefix(key));
+	window.testTutorial = showTutorial;
 	await loadScript(settings.theme_uploads_local.physics_lab);
 	const config = window.discourseTutorial;
 	// Load the status
@@ -23,6 +24,12 @@ async function loadTutorial(api) {
 	// Save the status
 	status.Showed[Tutorial] = true;
 	saveStatus();
+	// Show the tutorial
+	await showTutorial(config.tutorials[Tutorial]);
+}
+
+// Show the tutorial
+async function showTutorial(steps) {
 	// Load the driver
 	await loadScript(settings.theme_uploads_local.driver_js);
 	const driver = window.driver.js.driver;
@@ -33,7 +40,7 @@ async function loadTutorial(api) {
 		prevBtnText: locale("prev"),
 		allowClose: false,
 		allowKeyboardControl: true,
-		steps: config.tutorials[Tutorial],
+		steps: steps,
 		onCloseClick: () => {
 			status.Cancelled++;
 			saveStatus();
