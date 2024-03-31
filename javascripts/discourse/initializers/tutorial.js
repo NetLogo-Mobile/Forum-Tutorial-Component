@@ -20,6 +20,9 @@ async function loadTutorial(api) {
 	console.log("Preparing for the tutorial: " + Tutorial);
 	if (status.Showed[Tutorial] !== undefined) return;
 	console.log("Showing the tutorial: " + Tutorial);
+	// Save the status
+	status.Showed[Tutorial] = true;
+	saveStatus();
 	// Load the driver
 	await loadScript(settings.theme_uploads_local.driver_js);
 	const driver = window.driver.js.driver;
@@ -32,7 +35,8 @@ async function loadTutorial(api) {
 		allowKeyboardControl: true,
 		steps: config.tutorials[Tutorial],
 		onCloseClick: () => {
-			Cancelled++;
+			status.Cancelled++;
+			saveStatus();
 		}
 	})
 }
@@ -54,7 +58,6 @@ function loadStatus() {
 function saveStatus() {
 	localStorage.setItem("tutorialStatus", JSON.stringify(status));
 }
-
 
 // Register the initializer
 export default apiInitializer("1.13.0", (api) => {
