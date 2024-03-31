@@ -2,7 +2,9 @@
   "name": "NetLogo/Physics Lab Forum: Tutorial Component",
   "component": true,
   "assets": {
-    "driver_js": "assets/driver.1.0.1.min.js"
+    "driver_js": "assets/driver.1.0.1.min.js",
+    "physics_lab": "assets/physics-lab-forum.js",
+    "netlogo": "assets/netlogo-forum.js"
   },
   "about_url": "https://github.com/NetLogo-Mobile/Forum-Tutorial-Component"
 }
