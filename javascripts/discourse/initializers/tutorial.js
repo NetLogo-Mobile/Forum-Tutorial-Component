@@ -40,7 +40,7 @@ async function loadTutorial(api) {
 		}
 	};
 	console.log(driverConfig);
-	driver(driverConfig);
+	driver(driverConfig).drive();
 }
 
 // Tutorial statuses
