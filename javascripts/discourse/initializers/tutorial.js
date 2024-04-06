@@ -17,7 +17,23 @@ async function loadTutorial(api) {
   console.log("Login status: " + logged);
   console.log("username" + api.getCurrentUser().username_lower);
   console.log("Finding tutorial: " + window.location.pathname);
-  var Tutorial = mappings[window.location.pathname];
+  let Tutorial;
+  for(let key in mappings){
+    if(mappings.hasOwnProperty(key)){
+      if(new RegExp(key).test(window.location.pathname)){
+        Tutorial = mappings[key];
+        break;
+      }
+      if(key.startsWith("-")){
+        let path = `/u/${api.getCurrentUser().username_lower + key.slice(1)}`;
+        if(path == window.location.pathname){
+          Tutorial = mappings[key];
+          break;
+        }
+      }
+    }
+    Tutorial = undefined;
+  }
   if (Tutorial === undefined) return;
   console.log("Preparing for the tutorial: " + Tutorial);
   if (status.Showed[Tutorial] !== undefined) return;

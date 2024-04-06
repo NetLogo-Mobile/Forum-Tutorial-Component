@@ -1,16 +1,12 @@
-//import { apiInitializer } from "discourse/lib/api";
 const locale = tutorialLocale;
-// const baseProfileUrl = `/u/${api.getCurrentUser().username_lower}/`;
-// test
-const baseProfileUrl = `/u/wsxiaolin/`;
 window.discourseTutorial = {
   // For logged users, which tutorials should we map to which pages?
   "loggedMappings": {
     "/": "messages",
-    [`${baseProfileUrl}summary`]: "summary",
-    [`${baseProfileUrl}invited/pending`]: "invited",
-    [`${baseProfileUrl}preferences/account`]: "preferences",
-    [`${baseProfileUrl}badges`]: "own-badges",
+    "-summary": "summary",
+    "-invited/pending": "invited",
+    "-preferences/account": "preferences",
+    "-badges": "own-badges",
     
   },
   // For unlogged users
