@@ -20,16 +20,16 @@ async function loadTutorial(api) {
   let Tutorial;
   for(let key in mappings){
     if(mappings.hasOwnProperty(key)){
+      if (key.startsWith("-")) {
+        let path = `/u/${api.getCurrentUser().username_lower + key.slice(1)}`;
+        if (path == window.location.pathname) {
+          Tutorial = mappings[key];
+          break
+        }
+      }
       if(new RegExp(key).test(window.location.pathname)){
         Tutorial = mappings[key];
         break;
-      }
-      if(key.startsWith("-")){
-        let path = `/u/${api.getCurrentUser().username_lower + key.slice(1)}`;
-        if(path == window.location.pathname){
-          Tutorial = mappings[key];
-          break;
-        }
       }
     }
     Tutorial = undefined;
