@@ -2,7 +2,7 @@ const locale = tutorialLocale;
 window.discourseTutorial = {
   // For logged users, which tutorials should we map to which pages?
   "loggedMappings": {
-    "/": "messages",
+    "^/$": "messages",
     "-summary": "summary",
     "-invited/pending": "invited",
     "-preferences/account": "preferences",
@@ -11,7 +11,7 @@ window.discourseTutorial = {
   },
   // For unlogged users
   "unloggedMappings": {
-    "/t/topic/314": "messages"
+    "^/t/topic/314$": "messages"
   },
   // Tutorials
   "tutorials": {
