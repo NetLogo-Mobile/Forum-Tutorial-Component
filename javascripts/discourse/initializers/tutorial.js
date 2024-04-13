@@ -2,6 +2,7 @@ import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
 // Load the tutorial driver script
 async function loadTutorial(api) {
+  console.log('Current URL:', window.location.href);
   // Load the config
   window.tutorialLocale = (key) => I18n.t(themePrefix(key));
   window.testTutorial = showTutorial;
@@ -101,24 +102,10 @@ function saveStatus() {
 
 // Register the initializer
 export default apiInitializer("1.13.0", (api) => {
-  document.addEventListener('DOMContentLoaded', () => {
-  loadTutorial(api);
-  //If you change the URL by clicking the <a> tag, prevent default, then use history.pushState() instead
-  //To loadTutorial when update content based on the URL without refreshing the page
-  document.addEventListener('click', (event) => {
-    const target = event.target;
-    if (target.closest('a')) {
-      event.preventDefault();
-      const href = target.getAttribute('href');
-      history.pushState({}, '', href);
-    }
-  });
-  // Start tutorial when url changes
-  window.addEventListener("popstate",()=>{
-    console.log("Url changes to" + window.location.pathname);
-    document.addEventListener("DOMContentLoaded",()=>{
-      loadTutorial(api);
-    })
-  })
-  });
+    // Add route change listener
+    const router = api.container.lookup('router:main');
+    router.on('routeDidChange', loadTutorial);
+    
+    // Load tutorial on page load
+    loadTutorial(api);
 });
