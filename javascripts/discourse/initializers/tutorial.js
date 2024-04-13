@@ -106,9 +106,13 @@ export default apiInitializer("1.13.0", (api) => {
     // Add route change listener
     const router = api.container.lookup('router:main');
     router.on('routeDidChange', () => {
+      document.addEventListener('DOMContentLoaded', () => {
       loadTutorial(api);
+      });
     })
     
     // Load tutorial on page load
-    loadTutorial(api);
+    document.addEventListener('DOMContentLoaded', () => {
+      loadTutorial(api);
+    })
 });
