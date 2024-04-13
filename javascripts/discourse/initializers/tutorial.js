@@ -102,4 +102,15 @@ function saveStatus() {
 // Register the initializer
 export default apiInitializer("1.13.0", (api) => {
   loadTutorial(api);
+  //If you change the URL by clicking the <a> tag, prevent default, then use history.pushState() instead
+  //To loadTutorial when update content based on the URL without refreshing the page
+  document.addEventListener('click', function(event) {
+  const target = event.target;
+  if (target.tagName.toLowerCase() === 'a') {
+      event.preventDefault();
+      const href = target.getAttribute('href');
+      history.pushState({}, '', href);
+      loadTutorial(api);
+    }
+  });
 });
