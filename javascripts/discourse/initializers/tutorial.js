@@ -104,7 +104,9 @@ function saveStatus() {
 export default apiInitializer("1.13.0", (api) => {
     // Add route change listener
     const router = api.container.lookup('router:main');
-    router.on('routeDidChange', loadTutorial);
+    router.on('routeDidChange', (api) => {
+      loadTutorial(api);
+    };
     
     // Load tutorial on page load
     loadTutorial(api);
