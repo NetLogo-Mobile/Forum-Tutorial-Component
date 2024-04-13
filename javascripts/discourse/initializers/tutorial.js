@@ -106,7 +106,7 @@ export default apiInitializer("1.13.0", (api) => {
     const router = api.container.lookup('router:main');
     router.on('routeDidChange', (api) => {
       loadTutorial(api);
-    };
+    })
     
     // Load tutorial on page load
     loadTutorial(api);
