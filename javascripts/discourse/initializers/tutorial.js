@@ -101,5 +101,32 @@ function saveStatus() {
 
 // Register the initializer
 export default apiInitializer("1.13.0", (api) => {
+<<<<<<< HEAD
   loadTutorial(api);
 });
+=======
+  const { run } = Ember; 
+  const router = api.container.lookup('router:main');
+
+  // Add route change listener
+  router.one('didTransition', () => {
+    run.scheduleOnce('afterRender', () => {
+      loadTutorial(api);
+    });
+  });
+
+  // Load tutorial on page load
+  if (document.readyState === 'complete') {
+    run.scheduleOnce('afterRender', () => {
+      loadTutorial(api);
+    });
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      run.scheduleOnce('afterRender', () => {
+        loadTutorial(api);
+      });
+    });
+  }
+  
+});
+>>>>>>> 76d359c... ensure tutorial loads after DOM is ready
