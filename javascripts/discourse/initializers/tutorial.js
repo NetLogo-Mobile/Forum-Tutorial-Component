@@ -102,7 +102,7 @@ function saveStatus() {
 
 // Register the initializer
 export default apiInitializer("1.13.0", (api) => {
-  const { run } = Ember; 
+  const { run } = api; 
   const router = api.container.lookup('router:main');
 
   // Add route change listener
