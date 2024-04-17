@@ -1,5 +1,6 @@
 import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
+import Ember from 'ember';
 // Load the tutorial driver script
 async function loadTutorial(api) {
   console.log('Current URL:', window.location.href);
@@ -102,7 +103,7 @@ function saveStatus() {
 
 // Register the initializer
 export default apiInitializer("1.13.0", (api) => {
-  const { run } = api; 
+  const { run } = Ember; 
   const router = api.container.lookup('router:main');
 
   // Add route change listener
