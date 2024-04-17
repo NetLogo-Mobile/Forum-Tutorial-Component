@@ -102,17 +102,27 @@ function saveStatus() {
 
 // Register the initializer
 export default apiInitializer("1.13.0", (api) => {
+  const { run } = Ember; 
+  const router = api.container.lookup('router:main');
+
+  // Add route change listener
+  router.one('didTransition', () => {
+    run.scheduleOnce('afterRender', () => {
+      loadTutorial(api);
+    });
+  });
+
+  // Load tutorial on page load
+  if (document.readyState === 'complete') {
+    run.scheduleOnce('afterRender', () => {
+      loadTutorial(api);
+    });
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      run.scheduleOnce('afterRender', () => {
+        loadTutorial(api);
+      });
+    });
+  }
   
-    // Add route change listener
-    const router = api.container.lookup('router:main');
-    router.on('routeDidChange', () => {
-      setTimeout(() => {
-        loadTutorial(api);
-      },200)
-    })
-    
-    // Load tutorial on page load
-    setTimeout(() => {
-        loadTutorial(api);
-    }, 200)
 });
