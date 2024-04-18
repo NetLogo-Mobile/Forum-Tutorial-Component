@@ -66,8 +66,10 @@ async function showTutorial(steps) {
   // Show the tutorial
   const driverConfig = {
     doneBtnText: locale("done"),
+    showProgress: true,
     nextBtnText: locale("next"),
     prevBtnText: locale("prev"),
+    showButtons: ['next','previous','close'],
     allowClose: false,
     allowKeyboardControl: true,
     steps: newsteps,
