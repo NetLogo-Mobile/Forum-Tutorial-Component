@@ -109,11 +109,7 @@ export default apiInitializer("1.13.0", (api) => {
     loadTutorial(api);
   });
   
-  if (document.readyState !== 'loading') {
-    loadTutorial(api);
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
-      loadTutorial(api);
-    });
-  }
+  api.onLoad(() => {
+    loadTutorial();
+  });
 })
