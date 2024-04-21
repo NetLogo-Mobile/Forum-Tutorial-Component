@@ -11,7 +11,7 @@ window.discourseTutorial = {
   },
   // For unlogged users
   "unloggedMappings": {
-    "^/t/topic/314$": "messages"
+    "^/$": "unlogged_startpage"
   },
   // Tutorials
   "tutorials": {
@@ -94,7 +94,6 @@ window.discourseTutorial = {
         }
       ],
     "own-badges":[
-    // https://pl.turtlesim.com/u/{username}/badges
         {
           "element": "#user-content",
           "popover": {
@@ -102,6 +101,32 @@ window.discourseTutorial = {
             "description": "这里列出了您所获得的全部徽章，访问<a href='/badges'>这里</a>可以查看更多未获得徽章"
           }
         }
-      ]
+      ],
+    "unlogged_startpage":[
+      {
+        "element": "#site-logo",
+        "popover": {
+          "title": "欢迎各位！",
+          "description": "欢迎来到物理实验室网页版社区！在这里，您可以像在APP社区一样发布作品、交流学习，亦或是分享趣事"
+        }
+      },
+      {
+        "element": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > div.panel > span > span",
+        "popover": {
+          "title": "登录账号加入我们吧",
+          "description": " 在新版（2.6.8以后）中，将可以直接从应用访问社区。如果你已经注册了物理实验室帐号，将自动注册或登录网页版交流区帐号。如果你在物实没有验证邮箱，在交流区需要单独验证一次"
+        },
+        "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
+        "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
+      },
+       {
+         "element": "#d-sidebar",
+         "popover": {
+           "title": "点击'≡'打开侧边栏",
+           "description": "在这里，您可以快速跳转到不同分区、标签的帖子，发起或查看私聊、群聊等。更多功能等待您的探索和发现"
+         }
+       }
+      
+    ]
   }
 }
