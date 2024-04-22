@@ -7,11 +7,13 @@ window.discourseTutorial = {
     "-invited/pending": "invited",
     "-preferences/account": "preferences",
     "-badges": "own-badges",
+    "^badges$": "bages_list",
     
   },
   // For unlogged users
   "unloggedMappings": {
-    "^/$": "unlogged_startpage"
+    "^/$": "unlogged_startpage",
+    "^badges$": "bages_list",
   },
   // Tutorials
   "tutorials": {
@@ -127,6 +129,32 @@ window.discourseTutorial = {
          }
        }
       
-    ]
+    ],
+    "bages_list":[
+      {
+        "element": "#main-outlet > section > div > h1",
+        "popover": {
+          "title": "什么是徽章？",
+          "description": "徽章是在论坛上用来表彰用户特定成就、贡献或者参与度的一种图标或徽记。完成特定的任务、达到一定的活跃度、获得特定的荣誉或者对社区做出杰出贡献都有机会获得属于您的徽章。"
+        }
+          },
+      {
+        "element": "#main-outlet > section > div",
+        "popover": {
+          "title": "徽章列表",
+          "description": " 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面（也就是这里），您可以看到公开的徽章列表。"
+        },
+        "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
+        "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
+          },
+      {
+        "element": "#ember80 > div",
+        "popover": {
+          "title": "如何获得徽章？",
+          "description": "点击具体徽章可以查看获取条件等，注册之后，也可以在我的-徽章里面查看并佩戴已获得的徽章"
+        }
+           }
+    
+        ],
   }
 }
