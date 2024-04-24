@@ -142,13 +142,15 @@ window.discourseTutorial = {
         "element": "#main-outlet > section > div",
         "popover": {
           "title": "徽章列表",
+          "side": "top",
+          "align": "start",
           "description": " 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面（也就是这里），您可以看到公开的徽章列表。"
         },
         "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
         "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
           },
       {
-        "element": "#ember80 > div",
+        "element": "#main-outlet > section > div > div > div:nth-child(1) > div.badge-group-list > div:nth-child(1)",
         "popover": {
           "title": "如何获得徽章？",
           "description": "点击具体徽章可以查看获取条件等，注册之后，也可以在我的-徽章里面查看并佩戴已获得的徽章"

@@ -17,7 +17,7 @@ async function loadTutorial(api) {
   const logged = api.getCurrentUser() !== null;
   const mappings = logged ? config.loggedMappings : config.unloggedMappings;
   console.log("Login status: " + logged);
-  console.log("username" + api.getCurrentUser().username_lower);
+  console.log("username: " + api.getCurrentUser().username_lower);
   console.log("Finding tutorial: " + window.location.pathname);
   let Tutorial;
   for(let key in mappings){
@@ -58,8 +58,9 @@ async function showTutorial(steps) {
       const hopeElement = step.popover?.hopeElement;
       if (hopeElement == undefined) return step
       step.popover.onNextClick = function() {
-        document.querySelector(step.popover.nextClick).click()
-        myDriver.moveNext()
+        console.log("async tutorial steps strat")
+        document.querySelector(step.popover.nextClick).click();
+        myDriver.moveNext();
       }
     }
     return step
