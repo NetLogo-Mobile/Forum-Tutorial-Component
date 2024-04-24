@@ -26,7 +26,7 @@ window.discourseTutorial = {
           "side": "left",
           "align": "end",
           "hopeElement": "#current-user.active",
-          "nextClick": "#current-user"
+          "nextClick": "#current-user > button",
         }
         },
       {
