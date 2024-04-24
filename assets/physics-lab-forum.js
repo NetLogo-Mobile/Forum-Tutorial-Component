@@ -7,13 +7,13 @@ window.discourseTutorial = {
     "-invited/pending": "invited",
     "-preferences/account": "preferences",
     "-badges": "own-badges",
-    "^badges$": "bages_list",
+    "^/badges$": "badges_list",
     
   },
   // For unlogged users
   "unloggedMappings": {
     "^/$": "unlogged_startpage",
-    "^badges$": "bages_list",
+    "^badges$": "badges_list",
   },
   // Tutorials
   "tutorials": {
@@ -130,7 +130,7 @@ window.discourseTutorial = {
        }
       
     ],
-    "bages_list":[
+    "badges_list":[
       {
         "element": "#main-outlet > section > div > h1",
         "popover": {
