@@ -30,7 +30,7 @@ window.discourseTutorial = {
         }
         },
       {
-        "element": "#ember5 > header > div > div > div.panel > div:nth-child(3) > div > div > div > div > div.menu-tabs-container",
+        "element": "#ember304 > div.drop-down-mode.d-header-wrap > header > div > div > div.panel > div > div > div",
         "popover": {
           "side": "left",
           "title": "消息区介绍",
