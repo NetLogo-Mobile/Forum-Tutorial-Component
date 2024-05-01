@@ -7,13 +7,18 @@ window.discourseTutorial = {
     "-invited/pending": "invited",
     "-preferences/account": "preferences",
     "-badges": "own-badges",
-    "^badges$": "bages_list",
-    
+    "^/badges$": "bages_list",
+    "^/tags$": "tag_list",
+    "^/categories$": "categories",
+    "^\/t$": "unlogged_firstPost",
   },
   // For unlogged users
   "unloggedMappings": {
     "^/$": "unlogged_startpage",
-    "^badges$": "badges_list",
+    "^/badges$": "badges_list",
+    "^/tags$": "tag_list",
+    "^\/t$": "unlogged_firstPost",
+    
   },
   // Tutorials
   "tutorials": {
@@ -104,14 +109,14 @@ window.discourseTutorial = {
           }
         }
       ],
-    "unlogged_startpage":[
+    "unlogged_startpage": [
       {
         "element": "#site-logo",
         "popover": {
           "title": "欢迎各位！",
           "description": "欢迎来到物理实验室网页版社区！在这里，您可以像在APP社区一样发布作品、交流学习，亦或是分享趣事"
         }
-      },
+          },
       {
         "element": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > div.panel > span > span",
         "popover": {
@@ -120,16 +125,16 @@ window.discourseTutorial = {
         },
         "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
         "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
-      },
-       {
-         "element": "#d-sidebar",
-         "popover": {
-           "title": "点击'≡'打开侧边栏",
-           "description": "在这里，您可以快速跳转到不同分区、标签的帖子，发起或查看私聊、群聊等。更多功能等待您的探索和发现"
-         }
-       }
-      
-    ],
+          },
+      {
+        "element": "#d-sidebar",
+        "popover": {
+          "title": "点击'≡'打开侧边栏",
+          "description": "在这里，您可以快速跳转到不同分区、标签的帖子，发起或查看私聊、群聊等。更多功能等待您的探索和发现"
+        }
+           }
+    
+        ],
     "badges_list":[
       {
         "element": "#main-outlet > section > div > h1",
@@ -156,5 +161,72 @@ window.discourseTutorial = {
            }
     
         ],
+    "tag_list": [
+      {
+        "element": "#main-outlet > div.container.tags-index > div.list-controls > div > h2",
+        "popover": {
+          "title": "关于标签",
+          "description": "除了自带的语言标签外，用户可以给自己的帖子带上相关的标签。点击“≡”打开侧边栏，可以快速查看不同标签分类下的内容"
+        }
+      },
+      {
+        "element": "#ember106",
+        "popover": {
+          "title": "更多标签",
+          "description": "如果您有任何有关标签的建议，都可以发布帖子让我们知道您的意见和建议，欢迎您与我们共建论坛"
+        }
+      },
+      {
+        "element": "#ember182 > div:nth-child(2) > a",
+        "popover": {
+          "title": "快速跳转",
+          "description": "点击不同标签可以跳转至对应标签的帖子列表"
+        }
+      }
+    ],
+    "categories":[
+      {
+        "element": "#list-area > div.contents > div.custom-category-boxes-container",
+        "popover": {
+          "title": "关于类别",
+          "description": "每一个帖子都只能选择一个类别，为了避免错误分类，请阅读不同类别下应该发表什么样的帖子"
+        }
+      },
+      {
+        "element": "#list-area > div.contents > div.custom-category-boxes-container",
+        "popover": {
+          "title": "共建社区",
+          "description": "发现有帖子分类，可以点击下方 旗帜 形状的图标提示管理人员，详情查看<a href='/t/topic/294/1'>如何反馈不恰当内容</a>"
+        }
+      }
+    ],
+    "unlogged_firstPost": [
+      {
+        "element": "",
+        "popover": {
+          "title": "欢迎各位！",
+          "description": "欢迎来到物理实验室网页版社区！在这里，您可以像在APP社区一样发布作品、交流学习，亦或是分享趣事"
+        }
+          },
+      {
+        "element": "#post_1 > div > div.topic-avatar",
+        "popover": {
+          "title": "用户资料",
+          "description": "不论是话题的发起者还是回复者，都可以点击头像查看TA的资料/名片。同时，您在发表看法的时候也无需署名"
+        },
+        "hopeElement": null,
+        "nextClick": "#post_1 > div > div.topic-avatar"
+      },
+      {
+        "element": "#user-card > div",
+        "popover": {
+          "title": "用户名片",
+          "description": "点击用户名可以查看详细资料，注册账号后，您也可以填写并生成您独一无二的名片"
+        }
+      }
+    
+    ],
+    
+    
   }
 }
