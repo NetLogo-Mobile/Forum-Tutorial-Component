@@ -76,7 +76,7 @@ async function showTutorial(steps) {
           console.error(e);
         }
       }
-      step.popover.onDeselected = function() {
+      step.onDeselected = function() {
         try {
           document.querySelector(step.popover.nextClick).click();
           myDriver.movePrevious();
