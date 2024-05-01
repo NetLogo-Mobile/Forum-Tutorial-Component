@@ -59,17 +59,21 @@ async function showTutorial(steps) {
       if (hopeElement == undefined) return step
       step.popover.onNextClick = function() {
         try {
+          if (document.querySelector(step.popover.hopeElement != null)) return;
           document.querySelector(step.popover.nextClick).click();
           myDriver.moveNext();
         } catch (e) {
+          myDriver.destroy();
           console.error(e);
         }
       }
       step.popover.onPrevClick = function(){
         try {
+          if (document.querySelector(step.popover.hopeElement == null)) return;
           document.querySelector(step.popover.nextClick).click();
           myDriver.movePrevious();
         } catch (e) {
+          myDriver.movePrevious();
           console.error(e);
         }
       }
