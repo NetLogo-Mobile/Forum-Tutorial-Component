@@ -58,12 +58,23 @@ async function showTutorial(steps) {
       const hopeElement = step.popover?.hopeElement;
       if (hopeElement == undefined) return step
       step.popover.onNextClick = function() {
-        console.log("async tutorial steps strat")
-        document.querySelector(step.popover.nextClick).click();
-        myDriver.moveNext();
+        try {
+          document.querySelector(step.popover.nextClick).click();
+          myDriver.moveNext();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      step.popover.onPrevClick = function(){
+        try {
+          document.querySelector(step.popover.nextClick).click();
+          myDriver.movePrevious();
+        } catch (e) {
+          console.error(e);
+        }
       }
     }
-    return step
+    return step;
   })
   console.log(newsteps)
   // Show the tutorial
