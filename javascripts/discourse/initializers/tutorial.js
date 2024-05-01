@@ -76,6 +76,15 @@ async function showTutorial(steps) {
           console.error(e);
         }
       }
+      step.popover.onDeselected = function() {
+        try {
+          document.querySelector(step.popover.nextClick).click();
+          myDriver.movePrevious();
+        } catch (e) {
+          myDriver.movePrevious();
+          console.error(e);
+        }
+      }
     }
     return step;
   })
