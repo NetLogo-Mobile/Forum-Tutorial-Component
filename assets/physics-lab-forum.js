@@ -149,6 +149,8 @@ window.discourseTutorial = {
         "popover": {
           "title": "徽章列表",
           "description": " 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面（也就是这里），您可以看到公开的徽章列表。",
+          "side": "top",
+          "align": 'start',
           "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
           "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
         },
