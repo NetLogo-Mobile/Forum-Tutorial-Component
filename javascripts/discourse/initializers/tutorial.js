@@ -1,8 +1,9 @@
 import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
+import Ember from 'ember';
 // Load the tutorial driver script
-<<<<<<< HEAD
 async function loadTutorial(api) {
+  console.log('Current URL:', window.location.href);
   // Load the config
   window.tutorialLocale = (key) => I18n.t(themePrefix(key));
   window.testTutorial = showTutorial;
@@ -16,16 +17,16 @@ async function loadTutorial(api) {
   const logged = api.getCurrentUser() !== null;
   const mappings = logged ? config.loggedMappings : config.unloggedMappings;
   console.log("Login status: " + logged);
-  console.log("username" + api.getCurrentUser().username_lower);
+  console.log("username: " + api.getCurrentUser().username_lower);
   console.log("Finding tutorial: " + window.location.pathname);
   let Tutorial;
   for(let key in mappings){
     if(mappings.hasOwnProperty(key)){
       if (key.startsWith("-")) {
-        let path = `/u/${api.getCurrentUser().username_lower + key.slice(1)}`;
+        let path = `/u/${api.getCurrentUser().username_lower}/${key.slice(1)}`;
         if (path == window.location.pathname) {
           Tutorial = mappings[key];
-          break
+          break;
         }
       }
       if(new RegExp(key).test(window.location.pathname)){
@@ -57,8 +58,9 @@ async function showTutorial(steps) {
       const hopeElement = step.popover?.hopeElement;
       if (hopeElement == undefined) return step
       step.popover.onNextClick = function() {
-        document.querySelector(step.popover.nextClick).click()
-        myDriver.moveNext()
+        console.log("async tutorial steps strat")
+        document.querySelector(step.popover.nextClick).click();
+        myDriver.moveNext();
       }
     }
     return step
@@ -100,47 +102,17 @@ function loadStatus() {
 // Save the status to local storage
 function saveStatus() {
   localStorage.setItem("tutorialStatus", JSON.stringify(status));
-=======
-async function loadTutorial() {
-	window.tutorialTranslate = (key) => I18n.t(themePrefix(key));
-	// Load the driver
-	await loadScript(settings.theme_uploads_local.driver_js);
-	const driver = window.driver.js.driver;
-	// Load the config
-	await loadScript(settings.theme_uploads_local.physics_lab);
-	const config = window.discourseTutorial;
-	console.log(config);
->>>>>>> 314fa0a... Getting themePrefix work
 }
 
 // Register the initializer
 export default apiInitializer("1.13.0", (api) => {
-<<<<<<< HEAD
-  loadTutorial(api);
-});
-=======
-  const { run } = Ember; 
-  const router = api.container.lookup('router:main');
-
-  // Add route change listener
-  router.one('didTransition', () => {
-    run.scheduleOnce('afterRender', () => {
-      loadTutorial(api);
-    });
-  });
-
-  // Load tutorial on page load
-  if (document.readyState === 'complete') {
-    run.scheduleOnce('afterRender', () => {
-      loadTutorial(api);
-    });
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
-      run.scheduleOnce('afterRender', () => {
-        loadTutorial(api);
-      });
-    });
-  }
   
-});
->>>>>>> 76d359c... ensure tutorial loads after DOM is ready
+  api.onPageChange((url) => {
+    console.log("URL has changed to" + url);
+    loadTutorial(api);
+  });
+  
+  api.onLoad(() => {
+    loadTutorial();
+  });
+})
