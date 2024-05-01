@@ -145,7 +145,7 @@ window.discourseTutorial = {
         }
           },
       {
-        "element": "#main-outlet > section > div",
+        "element": "#main-outlet > section > div > div > div:nth-child(1) > div.title",
         "popover": {
           "title": "徽章列表",
           "description": " 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面（也就是这里），您可以看到公开的徽章列表。",
