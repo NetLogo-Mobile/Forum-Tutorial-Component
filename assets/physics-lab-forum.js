@@ -35,7 +35,7 @@ window.discourseTutorial = {
         }
         },
       {
-        "element": "#ember304 > div.drop-down-mode.d-header-wrap > header > div > div > div.panel > div > div > div",
+        "element": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > div.panel > div > div > div > div > div.menu-tabs-container",
         "popover": {
           "side": "left",
           "title": "消息区介绍",
@@ -53,10 +53,10 @@ window.discourseTutorial = {
       ],
     "summary":[
         {
-        "element": "#main-outlet > div.container.viewing-self > section > section > div.details > div.primary > section > ul > li:nth-child(3) > button",
+        "element": "#main-outlet > div.container.viewing-self > section > section > div > div > section > ul > li:nth-child(3) > button",
         "popover": {
           "title": "个人总结",
-          "description": "点击此处可以展或预览您的开个人资料",
+          "description": "点击此处可以展开或预览您的开个人资料",
           "side": "left"
         }
         },
@@ -214,7 +214,7 @@ window.discourseTutorial = {
           "title": "用户资料",
           "description": "不论是话题的发起者还是回复者，都可以点击头像查看TA的资料/名片。同时，您在发表看法的时候也无需署名"
         },
-        "hopeElement": null,
+        "hopeElement": "#user-card > div > div.card-row.first-row",
         "nextClick": "#post_1 > div > div.topic-avatar > div > a"
       },
       {
