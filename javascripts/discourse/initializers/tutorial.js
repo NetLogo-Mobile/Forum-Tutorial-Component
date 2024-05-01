@@ -2,6 +2,7 @@ import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
 import Ember from 'ember';
 // Load the tutorial driver script
+<<<<<<< HEAD
 async function loadTutorial(api) {
   console.log('Current URL:', window.location.href);
   // Load the config
@@ -102,6 +103,17 @@ function loadStatus() {
 // Save the status to local storage
 function saveStatus() {
   localStorage.setItem("tutorialStatus", JSON.stringify(status));
+=======
+async function loadTutorial() {
+	window.tutorialTranslate = (key) => I18n.t(themePrefix(key));
+	// Load the driver
+	await loadScript(settings.theme_uploads_local.driver_js);
+	const driver = window.driver.js.driver;
+	// Load the config
+	await loadScript(settings.theme_uploads_local.physics_lab);
+	const config = window.discourseTutorial;
+	console.log(config);
+>>>>>>> 314fa0a... Getting themePrefix work
 }
 
 // Register the initializer
