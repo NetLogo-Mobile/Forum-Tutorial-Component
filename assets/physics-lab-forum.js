@@ -7,7 +7,7 @@ window.discourseTutorial = {
     "-invited/pending": "invited",
     "-preferences/account": "preferences",
     "-badges": "own-badges",
-    "^/badges$": "bages_list",
+    "^/badges$": "badges_list",
     "^/tags$": "tag_list",
     "^/categories$": "categories",
     "^\/t": "unlogged_firstPost",
@@ -121,11 +121,12 @@ window.discourseTutorial = {
         "element": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > div.panel > span > span",
         "popover": {
           "title": "登录账号加入我们吧",
-          "description": " 在新版（2.6.8以后）中，将可以直接从应用访问社区。如果你已经注册了物理实验室帐号，将自动注册或登录网页版交流区帐号。如果你在物实没有验证邮箱，在交流区需要单独验证一次"
+          "description": " 在新版（2.6.8以后）中，将可以直接从应用访问社区。如果你已经注册了物理实验室帐号，将自动注册或登录网页版交流区帐号。如果你在物实没有验证邮箱，在交流区需要单独验证一次",
+          "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
+          "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
         },
-        "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
-        "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
-          },
+        
+      },
       {
         "element": "#d-sidebar",
         "popover": {
@@ -147,11 +148,12 @@ window.discourseTutorial = {
         "element": "#main-outlet > section > div",
         "popover": {
           "title": "徽章列表",
-          "description": " 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面（也就是这里），您可以看到公开的徽章列表。"
+          "description": " 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面（也就是这里），您可以看到公开的徽章列表。",
+          "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
+          "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
         },
-        "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
-        "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
-          },
+        
+      },
       {
         "element": "#ember80 > div",
         "popover": {
@@ -212,10 +214,11 @@ window.discourseTutorial = {
         "element": "#post_1 > div > div.topic-avatar",
         "popover": {
           "title": "用户资料",
-          "description": "不论是话题的发起者还是回复者，都可以点击头像查看TA的资料/名片。同时，您在发表看法的时候也无需署名"
+          "description": "不论是话题的发起者还是回复者，都可以点击头像查看TA的资料/名片。同时，您在发表看法的时候也无需署名",
+          "hopeElement": "#user-card > div > div.card-row.first-row",
+          "nextClick": "#post_1 > div > div.topic-avatar > div > a"
         },
-        "hopeElement": "#user-card > div > div.card-row.first-row",
-        "nextClick": "#post_1 > div > div.topic-avatar > div > a"
+        
       },
       {
         "element": "#user-card > div",
