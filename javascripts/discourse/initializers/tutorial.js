@@ -69,7 +69,6 @@ async function showTutorial(steps) {
       }
       step.popover.onPrevClick = function(){
         try {
-          if (document.querySelector(step.popover.hopeElement == null)) return;
           document.querySelector(step.popover.nextClick).click();
           myDriver.movePrevious();
         } catch (e) {

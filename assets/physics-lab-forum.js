@@ -116,7 +116,7 @@ window.discourseTutorial = {
           "title": "欢迎各位！",
           "description": "欢迎来到物理实验室网页版社区！在这里，您可以像在APP社区一样发布作品、交流学习，亦或是分享趣事"
         }
-          },
+      },
       {
         "element": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > div.panel > span > span",
         "popover": {
@@ -125,7 +125,6 @@ window.discourseTutorial = {
           "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
           "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
         },
-        
       },
       {
         "element": "#d-sidebar",
@@ -133,9 +132,8 @@ window.discourseTutorial = {
           "title": "点击'≡'打开侧边栏",
           "description": "在这里，您可以快速跳转到不同分区、标签的帖子，发起或查看私聊、群聊等。更多功能等待您的探索和发现"
         }
-           }
-    
-        ],
+      }
+    ],
     "badges_list":[
       {
         "element": "#main-outlet > section > div > h1",
@@ -143,7 +141,14 @@ window.discourseTutorial = {
           "title": "什么是徽章？",
           "description": "徽章是在论坛上用来表彰用户特定成就、贡献或者参与度的一种图标或徽记。完成特定的任务、达到一定的活跃度、获得特定的荣誉或者对社区做出杰出贡献都有机会获得属于您的徽章。"
         }
-          },
+      },
+      {
+        "element": "#ember80 > div",
+        "popover": {
+          "title": "如何获得徽章？",
+          "description": "点击具体徽章可以查看获取条件等，注册之后，也可以在我的-徽章里面查看并佩戴已获得的徽章"
+        }
+      },
       {
         "element": "#main-outlet > section > div > div > div:nth-child(1) > div.title",
         "popover": {
@@ -154,17 +159,8 @@ window.discourseTutorial = {
           "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
           "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
         },
-        
       },
-      {
-        "element": "#ember80 > div",
-        "popover": {
-          "title": "如何获得徽章？",
-          "description": "点击具体徽章可以查看获取条件等，注册之后，也可以在我的-徽章里面查看并佩戴已获得的徽章"
-        }
-           }
-    
-        ],
+      ],
     "tag_list": [
       {
         "element": "#main-outlet > div.container.tags-index > div.list-controls > div > h2",
@@ -211,7 +207,7 @@ window.discourseTutorial = {
           "title": "加入讨论吧",
           "description": "优秀的看法总是在交流中诞生，注册或登录，与大家一齐讨论吧。"
         }
-          },
+      },
       {
         "element": "#post_1 > div > div.topic-avatar",
         "popover": {
@@ -229,7 +225,6 @@ window.discourseTutorial = {
           "description": "点击用户名可以查看详细资料，注册账号后，您也可以填写并生成您独一无二的名片"
         }
       }
-    
     ],
     
     
