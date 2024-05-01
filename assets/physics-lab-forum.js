@@ -202,10 +202,10 @@ window.discourseTutorial = {
     ],
     "unlogged_firstPost": [
       {
-        "element": "",
+        "element": "#topic-title > div > div > h1 > a.fancy-title",
         "popover": {
-          "title": "欢迎各位！",
-          "description": "欢迎来到物理实验室网页版社区！在这里，您可以像在APP社区一样发布作品、交流学习，亦或是分享趣事"
+          "title": "加入讨论吧",
+          "description": "优秀的看法总是在交流中诞生，注册或登录，与大家一齐讨论吧。"
         }
           },
       {
