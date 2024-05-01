@@ -10,14 +10,14 @@ window.discourseTutorial = {
     "^/badges$": "bages_list",
     "^/tags$": "tag_list",
     "^/categories$": "categories",
-    "^\/t$": "unlogged_firstPost",
+    "^\/t": "unlogged_firstPost",
   },
   // For unlogged users
   "unloggedMappings": {
     "^/$": "unlogged_startpage",
     "^/badges$": "badges_list",
     "^/tags$": "tag_list",
-    "^\/t$": "unlogged_firstPost",
+    "^\/t": "unlogged_firstPost",
     
   },
   // Tutorials
@@ -31,7 +31,7 @@ window.discourseTutorial = {
           "side": "left",
           "align": "end",
           "hopeElement": "#current-user.active",
-          "nextClick": "#current-user"
+          "nextClick": "#current-user > button"
         }
         },
       {
@@ -215,7 +215,7 @@ window.discourseTutorial = {
           "description": "不论是话题的发起者还是回复者，都可以点击头像查看TA的资料/名片。同时，您在发表看法的时候也无需署名"
         },
         "hopeElement": null,
-        "nextClick": "#post_1 > div > div.topic-avatar"
+        "nextClick": "#post_1 > div > div.topic-avatar > div > a"
       },
       {
         "element": "#user-card > div",
