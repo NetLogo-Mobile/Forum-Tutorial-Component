@@ -25,7 +25,6 @@ window.discourseTutorial = {
           "description": "点击右上角个人头像可以弹出消息界面",
           "side": "left",
           "align": "end",
-          "hopeElement": "#current-user.active",
           "nextClick": "#current-user > button",
         }
         },
@@ -130,6 +129,7 @@ window.discourseTutorial = {
        }
       
     ],
+
     "badges_list":[
       {
         "element": "#main-outlet > section > div > h1",
@@ -142,6 +142,7 @@ window.discourseTutorial = {
         "element": "#main-outlet > section > div",
         "popover": {
           "title": "徽章列表",
+
           "side": "top",
           "align": "start",
           "description": " 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面（也就是这里），您可以看到公开的徽章列表。"
@@ -150,6 +151,7 @@ window.discourseTutorial = {
         "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
           },
       {
+
         "element": "#main-outlet > section > div > div > div:nth-child(1) > div.badge-group-list > div:nth-child(1)",
         "popover": {
           "title": "如何获得徽章？",
