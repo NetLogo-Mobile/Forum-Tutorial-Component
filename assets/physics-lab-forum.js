@@ -10,7 +10,7 @@ window.discourseTutorial = {
     "^/badges$": "badges_list",
     "^/tags$": "tag_list",
     "^/categories$": "categories",
-    "^\/t": "unlogged_firstPost",
+    "^\/t": "logged_firstPost",
   },
   // For unlogged users
   "unloggedMappings": {
@@ -35,7 +35,7 @@ window.discourseTutorial = {
         }
         },
       {
-        "element": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > div.panel > div > div > div > div > div.menu-tabs-container",
+        "element": ".user-menu.revamped.menu-panel.drop-down",
         "popover": {
           "side": "left",
           "title": "消息区介绍",
@@ -202,7 +202,7 @@ window.discourseTutorial = {
     ],
     "unlogged_firstPost": [
       {
-        "element": "#topic-title > div > div > h1 > a.fancy-title",
+        "element": "#topic-title",
         "popover": {
           "title": "加入讨论吧",
           "description": "优秀的看法总是在交流中诞生，注册或登录，与大家一齐讨论吧。"
@@ -225,8 +225,33 @@ window.discourseTutorial = {
           "description": "点击用户名可以查看详细资料，注册账号后，您也可以填写并生成您独一无二的名片"
         }
       }
+      
     ],
+    "logged_firstPost": [
+      {
+        "element": ".topic-notifications-button",
+        "popover": {
+          "title": "通知设置",
+          "description": "您可以在此设置有关本话题活动的消息提示方式，例如：是否需要在有回复的时候显示为未读。对于您回复过的话题，我们会有一些默认的设置，您可以在个人设置-消息通知里面进行修改"
+        }
+          },
+      {
+        "element": ".actions",
+        "popover": {
+          "title": "相关操作",
+          "description": "操作栏里面可以进行点赞（爱心图标）、翻译（地球图标）、收藏等操作，随着信任等级（详情搜索：信任等级）的提高，您可以使用更多的功能【这是为了避免新用户因较多的功能而感到混乱】当然，您也可以点击铅笔图标去编辑自己发布的帖子（详情搜索：编辑帖子）当然，如果您认为帖子有不合适的地方，可以点击旗帜图标进行举报（详情搜索：标记作品）"
+        },
     
+          },
+      {
+        "element": "widget-button.reply.create",
+        "popover": {
+          "title": "参与讨论",
+          "description": "交流时请保持友善，共建美好社区。您可以点击侧边栏-更多-常见问题解答 查看发言注意事项请，或搜索FAQ"
+        }
+          }
+    
+        ],
     
   }
 }
