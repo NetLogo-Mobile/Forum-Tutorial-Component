@@ -11,6 +11,8 @@ window.discourseTutorial = {
     "^/tags$": "tag_list",
     "^/categories$": "categories",
     "^\/t": "logged_firstPost",
+    "^/g$": "group",
+
   },
   // For unlogged users
   "unloggedMappings": {
@@ -18,7 +20,9 @@ window.discourseTutorial = {
     "^/badges$": "badges_list",
     "^/tags$": "tag_list",
     "^\/t": "unlogged_firstPost",
+    "^/g$": "group",
     
+
   },
   // Tutorials
   "tutorials": {
@@ -33,7 +37,7 @@ window.discourseTutorial = {
           "hopeElement": "#current-user.active",
           "nextClick": "#current-user > button"
         }
-        },
+      },
       {
         "element": ".user-menu.revamped.menu-panel.drop-down",
         "popover": {
@@ -41,7 +45,7 @@ window.discourseTutorial = {
           "title": "消息区介绍",
           "description": "在这里，您可以浏览所有与您有关的消息，点击右侧交互按钮查看对应类别的内容"
         }
-        },
+      },
       {
         "element": "#quick-access-all-notifications > div",
         "popover": {
@@ -49,66 +53,66 @@ window.discourseTutorial = {
           "title": "消息区介绍",
           "description": "点击这里跳转到用户中心，查看更多内容"
         }
-        }
-      ],
-    "summary":[
-        {
+      }
+    ],
+    "summary": [
+      {
         "element": "#main-outlet > div.container.viewing-self > section > section > div > div > section > ul > li:nth-child(3) > button",
         "popover": {
           "title": "个人总结",
           "description": "点击此处可以展开或预览您的开个人资料",
           "side": "left"
         }
-        },
+      },
       {
         "element": "#main-outlet > div.container.viewing-self > section > div > section > nav > ul",
         "popover": {
           "title": "个人总结",
           "description": "点击选项卡以查看不同功能"
         }
-        }
-      ],
+      }
+    ],
     "invited": [
-        {
-          "element": "#user-content > section.user-additional-controls > section",
-          "popover": {
-            "title": "共建社区",
-            "description": "欢迎邀请更多用户来到我们的社区，成功邀请后您可以获得限定徽章"
-          }
+      {
+        "element": "#user-content > section.user-additional-controls > section",
+        "popover": {
+          "title": "共建社区",
+          "description": "欢迎邀请更多用户来到我们的社区，成功邀请后您可以获得限定徽章"
         }
-      ],
-    "preferences":[
-        {
-          "element": "#main-outlet > div.container.viewing-self > section > div > div > div > nav > ul > li.user-nav__preferences-profile",
-          "popover": {
-            "title": "个性设置",
-            "description": "填写个人资料，让大家更好的认识你吧！在这里，您可以设置个人网站、用户卡片背景、个性签名等"
-          }
-        },
-        {
-          "element": "#main-outlet > div.container.viewing-self > section > div > div > div > nav > ul > li.user-nav__preferences-tracking",
-          "popover": {
-            "title": "个性设置",
-            "description": "在这里，您可以关注/取消关注特定类别、标签的帖子或话题"
-          }
-        },
-        {
-          "element": "#main-outlet > div.container.viewing-self > section > div > div > div > nav > ul > li.user-nav__preferences-users",
-          "popover": {
-            "title": "个性设置",
-            "description": "在这里，您可以屏蔽/解除屏蔽特定的用户"
-          }
+      }
+    ],
+    "preferences": [
+      {
+        "element": "#main-outlet > div.container.viewing-self > section > div > div > div > nav > ul > li.user-nav__preferences-profile",
+        "popover": {
+          "title": "个性设置",
+          "description": "填写个人资料，让大家更好的认识你吧！在这里，您可以设置个人网站、用户卡片背景、个性签名等"
         }
-      ],
-    "own-badges":[
-        {
-          "element": "#user-content",
-          "popover": {
-            "title": "更多徽章",
-            "description": "这里列出了您所获得的全部徽章，访问<a href='/badges'>这里</a>可以查看更多未获得徽章"
-          }
+      },
+      {
+        "element": "#main-outlet > div.container.viewing-self > section > div > div > div > nav > ul > li.user-nav__preferences-tracking",
+        "popover": {
+          "title": "个性设置",
+          "description": "在这里，您可以关注/取消关注特定类别、标签的帖子或话题"
         }
-      ],
+      },
+      {
+        "element": "#main-outlet > div.container.viewing-self > section > div > div > div > nav > ul > li.user-nav__preferences-users",
+        "popover": {
+          "title": "个性设置",
+          "description": "在这里，您可以屏蔽/解除屏蔽特定的用户"
+        }
+      }
+    ],
+    "own-badges": [
+      {
+        "element": "#user-content",
+        "popover": {
+          "title": "更多徽章",
+          "description": "这里列出了您所获得的全部徽章，访问<a href='/badges'>这里</a>可以查看更多未获得徽章"
+        }
+      }
+    ],
     "unlogged_startpage": [
       {
         "element": "#site-logo",
@@ -134,7 +138,7 @@ window.discourseTutorial = {
         }
       }
     ],
-    "badges_list":[
+    "badges_list": [
       {
         "element": "#main-outlet > section > div > h1",
         "popover": {
@@ -160,7 +164,7 @@ window.discourseTutorial = {
           "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
         },
       },
-      ],
+    ],
     "tag_list": [
       {
         "element": "#main-outlet > div.container.tags-index > div.list-controls > div > h2",
@@ -184,7 +188,7 @@ window.discourseTutorial = {
         }
       }
     ],
-    "categories":[
+    "categories": [
       {
         "element": "#list-area > div.contents > div.custom-category-boxes-container",
         "popover": {
@@ -216,7 +220,7 @@ window.discourseTutorial = {
           "hopeElement": "#user-card > div > div.card-row.first-row",
           "nextClick": "#post_1 > div > div.topic-avatar > div > a"
         },
-        
+
       },
       {
         "element": "#user-card > div",
@@ -225,7 +229,7 @@ window.discourseTutorial = {
           "description": "点击用户名可以查看详细资料，注册账号后，您也可以填写并生成您独一无二的名片"
         }
       }
-      
+
     ],
     "logged_firstPost": [
       {
@@ -234,24 +238,56 @@ window.discourseTutorial = {
           "title": "通知设置",
           "description": "您可以在此设置有关本话题活动的消息提示方式，例如：是否需要在有回复的时候显示为未读。对于您回复过的话题，我们会有一些默认的设置，您可以在个人设置-消息通知里面进行修改"
         }
-          },
+      },
       {
         "element": ".actions",
         "popover": {
           "title": "相关操作",
           "description": "操作栏里面可以进行点赞（爱心图标）、翻译（地球图标）、收藏等操作，随着信任等级（详情搜索：信任等级）的提高，您可以使用更多的功能【这是为了避免新用户因较多的功能而感到混乱】当然，您也可以点击铅笔图标去编辑自己发布的帖子（详情搜索：编辑帖子）当然，如果您认为帖子有不合适的地方，可以点击旗帜图标进行举报（详情搜索：标记作品）"
         },
-    
-          },
+
+      },
       {
         "element": "widget-button.reply.create",
         "popover": {
           "title": "参与讨论",
           "description": "交流时请保持友善，共建美好社区。您可以点击侧边栏-更多-常见问题解答 查看发言注意事项请，或搜索FAQ"
         }
-          }
-    
-        ],
-    
+      }
+
+    ],
+    "group": [
+      {
+        "element": ".groups-header",
+        "popover": {
+          "title": "什么是群组？",
+          "description": "“群组”功能允许用户创建和加入特定主题或兴趣小组，促进围绕共同话题的深入交流与合作。"
+        }
+      },
+      {
+        "element": ".group-box",
+        "popover": {
+          "title": "加入群组",
+          "description": "除了系统默认的群组之外，你也可以加入一个群组与志同道合的人一起讨论。点击详群组卡片，查看细内容，您可以选择直接申请或者通过私信功能与群组的管理员联系"
+        },
+
+      },
+      {
+        "element": "[data-group-name='admins']",
+        "popover": {
+          "title": "创建一个群组",
+          "description": "您可以随时私信联系管理人员创建一个特定的群组并将您设定为群组管理人员"
+        }
+      },
+      {
+        "element": "[data-group-name='Editors-Chinese']",
+        "popover": {
+          "title": "联系组织人员",
+          "description": "一些群组可能在APP和社区内为大家提供特定的帮助，您可以点击卡片查看详细说明、联系成员或者查看群组活动"
+        }
+      }
+
+    ],
+
   }
 }
