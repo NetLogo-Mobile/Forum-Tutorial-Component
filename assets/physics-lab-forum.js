@@ -147,21 +147,21 @@ window.discourseTutorial = {
         }
       },
       {
-        "element": "#ember80 > div",
+        "element": ".badge-card'",
         "popover": {
           "title": "如何获得徽章？",
-          "description": "点击具体徽章可以查看获取条件等，注册之后，也可以在我的-徽章里面查看并佩戴已获得的徽章"
+          "description": "点击具体徽章可以查看获取条件等，注册之后，也可以在我的-徽章里面查看并佩戴已获得的徽章",
+          "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
+          "nextClick": ".btn-sidebar-toggle"
         }
       },
       {
-        "element": "#main-outlet > section > div > div > div:nth-child(1) > div.title",
+        "element": ".sidebar-more-section-links-details-summary",
         "popover": {
           "title": "徽章列表",
-          "description": " 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面（也就是这里），您可以看到公开的徽章列表。",
+          "description": " 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面，您可以看到公开的徽章列表。",
           "side": "top",
-          "align": 'start',
-          "hopeElement": "#sidebar-section-content-community > li:nth-child(1)",
-          "nextClick": "#ember3 > div.drop-down-mode.d-header-wrap > header > div > div > span > button"
+          "align": 'start'
         },
       },
     ],
@@ -268,7 +268,7 @@ window.discourseTutorial = {
         "element": ".group-box",
         "popover": {
           "title": "加入群组",
-          "description": "除了系统默认的群组之外，你也可以加入一个群组与志同道合的人一起讨论。点击详群组卡片，查看细内容，您可以选择直接申请或者通过私信功能与群组的管理员联系"
+          "description": "除了系统默认的群组之外，你也可以加入一个群组与志同道合的人一起讨论。点击群组卡片，查看细内容，您可以选择直接申请或者通过私信功能与群组的管理员联系"
         },
 
       },
