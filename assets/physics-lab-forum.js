@@ -174,17 +174,17 @@ window.discourseTutorial = {
         }
       },
       {
-        "element": "#ember106",
+        "element": ".tags-list.tag-list",
         "popover": {
           "title": "更多标签",
           "description": "如果您有任何有关标签的建议，都可以发布帖子让我们知道您的意见和建议，欢迎您与我们共建论坛"
         }
       },
       {
-        "element": "#ember182 > div:nth-child(2) > a",
+        "element": ".tag-box",
         "popover": {
           "title": "快速跳转",
-          "description": "点击不同标签可以跳转至对应标签的帖子列表"
+          "description": "点击不同标签可以跳转至对应标签的帖子列表。tips：您也可以在作品列表或搜索的时候指定特定的标签"
         }
       }
     ],
