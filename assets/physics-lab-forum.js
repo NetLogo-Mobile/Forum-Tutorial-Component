@@ -57,18 +57,10 @@ window.discourseTutorial = {
     ],
     "summary": [
       {
-        "element": "#main-outlet > div.container.viewing-self > section > section > div > div > section > ul > li:nth-child(3) > button",
-        "popover": {
-          "title": "个人总结",
-          "description": "点击此处可以展开或预览您的开个人资料",
-          "side": "left"
-        }
-      },
-      {
         "element": "#main-outlet > div.container.viewing-self > section > div > section > nav > ul",
         "popover": {
-          "title": "个人总结",
-          "description": "点击选项卡以查看不同功能"
+          "title": "个性化设置",
+          "description": "论坛提供了丰富的可自定义 功能，点击选项卡以查看不同功能。如果有任何问题，欢迎搜索或者联系我们<a href='/about'>友好的管理人员</a>"
         }
       }
     ],
@@ -276,7 +268,7 @@ window.discourseTutorial = {
         "element": "[data-group-name='admins']",
         "popover": {
           "title": "创建一个群组",
-          "description": "您可以随时私信联系管理人员创建一个特定的群组并将您设定为群组管理人员"
+          "description": "您可以随时私信联系<a href='/about'>管理人员</a>创建一个特定的群组并将您设定为群组管理人员"
         }
       },
       {
