@@ -190,14 +190,14 @@ window.discourseTutorial = {
     ],
     "categories": [
       {
-        "element": "#list-area > div.contents > div.custom-category-boxes-container",
+        "element": ".navigation-container",
         "popover": {
           "title": "关于类别",
           "description": "每一个帖子都只能选择一个类别，为了避免错误分类，请阅读不同类别下应该发表什么样的帖子"
         }
       },
       {
-        "element": "#list-area > div.contents > div.custom-category-boxes-container",
+        "element": ".category-box.category-box-general",
         "popover": {
           "title": "共建社区",
           "description": "发现有帖子分类，可以点击下方 旗帜 形状的图标提示管理人员，详情查看<a href='/t/topic/294/1'>如何反馈不恰当内容</a>"
