@@ -141,7 +141,7 @@ window.discourseTutorial = {
         }
       },
       {
-        "element": ".badge-card'",
+        "element": ".badge-card",
         "popover": {
           "title": "如何获得徽章？",
           "description": "点击具体徽章可以查看获取条件等，注册之后，也可以在我的-徽章里面查看并佩戴已获得的徽章",
