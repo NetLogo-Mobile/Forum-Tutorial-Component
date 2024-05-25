@@ -56,7 +56,7 @@ async function showTutorial(steps) {
   let newsteps = steps.map((step) => {
     if (step.popover.hasOwnProperty("nextClick")) {
       const hopeElement = step.popover?.hopeElement;
-      if (hopeElement == undefined) return step
+      if (hopeElement === undefined) return step
       step.popover.onNextClick = function() {
         try {
           if (document.querySelector(step.popover.hopeElement != null)) return;
