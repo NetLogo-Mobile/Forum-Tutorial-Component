@@ -76,6 +76,7 @@ async function showTutorial(steps) {
   console.log(newsteps)
   // Show the tutorial
   const driverConfig = {
+    overlayColor: rgba(31, 31, 34, 0.73),
     doneBtnText: locale("done"),
     showProgress: true,
     nextBtnText: locale("next"),
