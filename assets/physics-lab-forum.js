@@ -287,15 +287,11 @@ window.discourseTutorial = {
         "element": "section.about.admins > h3",
         "popover": {
           "title": "关于“管理人员”",
-          "description": "有任何意见、建议、反馈都可以随时联系我们的管理人员，如果您希望创建新的标签、类别、群组，也可以发布帖子或者和管理人员一同讨论",
-          "onNextClick": () => {
-            document.querySelector(".username").click(),
-            setTimeout(() => window.myDriver.moveNext() ,1000)
-          }
+          "description": "有任何意见、建议、反馈都可以随时联系我们的管理人员，如果您希望创建新的标签、类别、群组，也可以发布帖子或者和管理人员一同讨论"
         }
       },
       {
-        "element": "#user-card > div",
+        "element": ".user-info.smal",
         "popover": {
           "title": "私信功能",
           "description": "您可以通过“私信”与管理人员取得联系（当然，也可以通过私信联系其他用户）"
