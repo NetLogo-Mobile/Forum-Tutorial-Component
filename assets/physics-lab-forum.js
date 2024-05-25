@@ -284,12 +284,11 @@ window.discourseTutorial = {
     ],
     "about":[
       {
-        "element": ".admins",
+        "element": "section.about.admins > h3",
         "popover": {
           "title": "关于“管理人员”",
           "description": "有任何意见、建议、反馈都可以随时联系我们的管理人员，如果您希望创建新的标签、类别、群组，也可以发布帖子或者和管理人员一同讨论",
-          "hopeElement": null,
-          "nextClick": ".username"
+          "onNextClick": () => document.querySelector(".username").click()
         }
       },
       {
