@@ -1,6 +1,9 @@
 import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
 import Ember from 'ember';
+
+const DELAY_TIME = 300;  //How many milliseconds should we wait after an async tutorial click operation?
+
 // Load the tutorial driver script
 async function loadTutorial(api) {
   console.log('Current URL:', window.location.href);
@@ -61,7 +64,7 @@ async function showTutorial(steps) {
         try {
           if (document.querySelector(step.popover.hopeElement != null)) return;
           document.querySelector(step.popover.nextClick).click();
-          setTimeout(() => window.myDriver.moveNext() ,300) // wait for loading
+          setTimeout(() => window.myDriver.moveNext() ,DELAY_TIME) // wait for loading
         } catch (e) {
           myDriver.destroy();
           console.error(e);
