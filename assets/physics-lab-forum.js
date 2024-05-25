@@ -291,7 +291,7 @@ window.discourseTutorial = {
         }
       },
       {
-        "element": ".user-info.smal",
+        "element": ".user-info",
         "popover": {
           "title": "私信功能",
           "description": "您可以通过“私信”与管理人员取得联系（当然，也可以通过私信联系其他用户）"
