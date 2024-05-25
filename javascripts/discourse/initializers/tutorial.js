@@ -87,8 +87,8 @@ async function showTutorial(steps) {
     }
   };
   console.log(driverConfig);
-  const myDriver = driver(driverConfig)
-  myDriver.drive();
+  window.myDriver = driver(driverConfig)
+  window.myDriver.drive();
 }
 
 // Tutorial statuses
