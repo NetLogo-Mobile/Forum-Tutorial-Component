@@ -290,7 +290,7 @@ window.discourseTutorial = {
           "description": "有任何意见、建议、反馈都可以随时联系我们的管理人员，如果您希望创建新的标签、类别、群组，也可以发布帖子或者和管理人员一同讨论",
           "onNextClick": () => {
             document.querySelector(".username").click(),
-            window.myDriver.moveNext()
+            setTimeout(() => window.myDriver.moveNext() ,300)
           }
         }
       },

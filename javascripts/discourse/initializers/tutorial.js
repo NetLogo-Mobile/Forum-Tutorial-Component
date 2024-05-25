@@ -61,7 +61,7 @@ async function showTutorial(steps) {
         try {
           if (document.querySelector(step.popover.hopeElement != null)) return;
           document.querySelector(step.popover.nextClick).click();
-          myDriver.moveNext();
+          setTimeout(() => window.myDriver.moveNext() ,300) // wait for loading
         } catch (e) {
           myDriver.destroy();
           console.error(e);
