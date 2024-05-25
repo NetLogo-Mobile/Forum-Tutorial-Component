@@ -129,7 +129,7 @@ window.discourseTutorial = {
           "description": "在这里，您可以快速跳转到不同分区、标签的帖子，发起或查看私聊、群聊等。更多功能等待您的探索和发现"
         }
       }
-    ],
+    ], //Pending tests
     "badges_list": [
       {
         "element": "#main-outlet > section > div > h1",
@@ -222,7 +222,7 @@ window.discourseTutorial = {
         }
       }
 
-    ],
+    ], //Pending tests
     "logged_firstPost": [
       {
         "element": ".topic-notifications-button",
