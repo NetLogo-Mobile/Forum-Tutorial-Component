@@ -2,7 +2,7 @@ const locale = tutorialLocale;
 window.discourseTutorial = {
   // For logged users, which tutorials should we map to which pages?
   "loggedMappings": {
-    "^/$": "messages",
+    "^/$": "logged_startpage",
     "-summary": "summary",
     "-invited/pending": "invited",
     "-preferences/account": "preferences",
@@ -28,7 +28,7 @@ window.discourseTutorial = {
   },
   // Tutorials
   "tutorials": {
-    "messages": [
+    "logged_startpage": [
       {
         "element": "#current-user",
         "popover": {
