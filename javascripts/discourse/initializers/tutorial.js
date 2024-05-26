@@ -62,7 +62,7 @@ async function showTutorial(steps) {
       if (hopeElement === undefined) return step
       step.popover.onNextClick = function() {
         try {
-          if (document.querySelector(step.popover.hopeElement != null)) return;
+          if (document.querySelector(step.popover.hopeElement)!= null) return;
           document.querySelector(step.popover.nextClick).click();
           setTimeout(() => window.myDriver.moveNext() ,DELAY_TIME) // wait for loading
         } catch (e) {
