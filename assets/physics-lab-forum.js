@@ -13,7 +13,7 @@ window.discourseTutorial = {
     "^\/t": "logged_firstPost",
     "^/g$": "group",
     "^/about$": "about",
-    "-Notifications": "Notifications",
+    "-notifications": "notifications",
     
 
   },
@@ -299,7 +299,7 @@ window.discourseTutorial = {
         }
       }
     ],
-    "Notifications": [
+    "notifications": [
       {
         "element": "#user-content",
         "popover": {
