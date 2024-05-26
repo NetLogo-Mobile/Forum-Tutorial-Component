@@ -13,6 +13,7 @@ window.discourseTutorial = {
     "^\/t": "logged_firstPost",
     "^/g$": "group",
     "^/about$": "about",
+    "-Notifications": "Notifications",
     
 
   },
@@ -298,6 +299,29 @@ window.discourseTutorial = {
         }
       }
     ],
+    "Notifications": [
+      {
+        "element": "#user-content",
+        "popover": {
+          "title": "什么是“通知”？",
+          "description": "通知是系统向用户发送的信息，用来提醒用户有关其账户活动或其关注内容的更新。例如，当有人回复了你参与的帖子、点赞了你的评论、提及了(@)你、你收到了新的私信、或是有新的话题符合你的关注设定时，系统会自动发送通知给你。"
+        }
+      },
+      {
+        "element": ".user-nav__personal-messages",
+        "popover": {
+          "title": "“通知”与“消息”",
+          "description": "二者并不相同。消息也就是私信功能的收件箱，比如用户可以通过站内信功能向其他用户发送个人消息，进行一对一的沟通"
+        }
+      },
+      {
+        "element": ".user-nav__preferences",
+        "popover": {
+          "title": "个性化设置",
+          "description": "通知可以根据用户的偏好设置为即时推送、邮件通知等形式"
+        }
+      }
+    ]
 
   }
 }
