@@ -120,11 +120,7 @@ function saveStatus() {
 export default apiInitializer("1.13.0", (api) => {
   
   api.onPageChange((url) => {
-    console.log("URL has changed to" + url);
     loadTutorial(api);
   });
   
-  api.onLoad(() => {
-    loadTutorial();
-  });
 })
