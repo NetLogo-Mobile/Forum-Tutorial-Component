@@ -329,7 +329,7 @@ window.discourseTutorial = {
         "element": ".category-breadcrumb",
         "popover": {
           "title": "什么是“消息”？",
-          "description": "消息用户间的交流内容，如主题讨论、私信、评论等。点击用户头像，在弹出的用户卡片里面点击私信按钮即可与用户一对一沟通"
+          "description": "消息是用户间的交流内容，如主题讨论、私信、评论等。点击用户头像，在弹出的用户卡片里面点击私信按钮即可与用户一对一沟通"
         }
       },
       {
