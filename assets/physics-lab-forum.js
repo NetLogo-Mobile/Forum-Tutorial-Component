@@ -14,6 +14,8 @@ window.discourseTutorial = {
     "^/g$": "group",
     "^/about$": "about",
     "-notifications": "notifications",
+    "-messages": "messages",
+    
     
 
   },
@@ -319,6 +321,22 @@ window.discourseTutorial = {
         "popover": {
           "title": "个性化设置",
           "description": "通知可以根据用户的偏好设置为即时推送、邮件通知等形式"
+        }
+      }
+    ],
+    "messages": [
+      {
+        "element": ".category-breadcrumb",
+        "popover": {
+          "title": "什么是“消息”？",
+          "description": "消息用户间的交流内容，如主题讨论、私信、评论等。点击用户头像，在弹出的用户卡片里面点击私信按钮即可与用户一对一沟通"
+        }
+      },
+      {
+        "element": ".new-private-message",
+        "popover": {
+          "title": "群发消息",
+          "description": "类似邮件，您也可以同时将消息发送给多位用户，此时就类似创建了一个小的群聊，只有选择的用户可以看到有关信息"
         }
       }
     ]
