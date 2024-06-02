@@ -59,9 +59,6 @@ async function showTutorial(steps) {
   let newsteps = steps.map((step) => {
     if (step.popover.hasOwnProperty("nextClick")) {
       const hopeElement = step.popover?.hopeElement;
-      step.onHighlightStarted = function() {
-        console.log(...arguments)
-      }
       if (hopeElement === undefined) return step
       step.popover.onNextClick = function() {
         try {
@@ -95,7 +92,10 @@ async function showTutorial(steps) {
       status.Cancelled++;
       saveStatus();
     },
-    
+    onHighlightStarted: (options) => {
+      console.log(options)
+      document.querySelector("body > div.driver-popover > div.driver-popover-footer > span.driver-popover-navigation-btns").innerHTML += '<button class="close">关闭</button>'
+    }
   };
   console.log(driverConfig);
   window.myDriver = driver(driverConfig)
