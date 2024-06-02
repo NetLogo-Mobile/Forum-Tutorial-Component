@@ -92,7 +92,7 @@ async function showTutorial(steps) {
       status.Cancelled++;
       saveStatus();
     },
-    onHighlighted: (options) => {
+    onHighlighted: (element,step, options) => {
       console.log(options)
       document.querySelector("body > div.driver-popover > div.driver-popover-footer > span.driver-popover-navigation-btns").innerHTML += '<button class="close">关闭</button>'
     }
