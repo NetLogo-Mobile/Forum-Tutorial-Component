@@ -1,6 +1,7 @@
 import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
 import Ember from 'ember';
+import Swal from './../../../assets/sweetaler2.11.11.0.min.js'
 
 const DELAY_TIME = 300;  //How many milliseconds should we wait after an async tutorial click operation?
 
@@ -11,7 +12,6 @@ async function loadTutorial(api) {
   window.tutorialLocale = (key) => I18n.t(themePrefix(key));
   window.testTutorial = showTutorial;
   await loadScript(settings.theme_uploads_local.physics_lab);
-  await loadScript(settings.theme_uploads_local.sweetlaert2);
   const config = window.discourseTutorial;
   // Load the status
   loadStatus();
