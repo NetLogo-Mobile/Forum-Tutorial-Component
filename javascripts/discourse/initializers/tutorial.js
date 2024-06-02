@@ -91,6 +91,9 @@ async function showTutorial(steps) {
     onCloseClick: () => {
       status.Cancelled++;
       saveStatus();
+    },
+    onHighlightStarted: () => {
+      console.log(...arguments)
     }
   };
   console.log(driverConfig);
