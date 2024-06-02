@@ -11,6 +11,7 @@ async function loadTutorial(api) {
   window.tutorialLocale = (key) => I18n.t(themePrefix(key));
   window.testTutorial = showTutorial;
   await loadScript(settings.theme_uploads_local.physics_lab);
+  await loadScript(settings.theme_uploads_local.sweetlaert2);
   const config = window.discourseTutorial;
   // Load the status
   loadStatus();

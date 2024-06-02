@@ -4,7 +4,8 @@
   "assets": {
     "driver_js": "assets/driver.1.0.1.min.js",
     "physics_lab": "assets/physics-lab-forum.js",
-    "netlogo": "assets/netlogo-forum.js"
+    "netlogo": "assets/netlogo-forum.js",
+    "sweetalert2": "assets/sweetaler2.11.11.0.min.js"
   },
   "about_url": "https://github.com/NetLogo-Mobile/Forum-Tutorial-Component"
 }
