@@ -55,18 +55,27 @@ async function showTutorial(steps) {
   // Load the driver
   await loadScript(settings.theme_uploads_local.driver_js);
   const driver = window.driver.js.driver;
-  	// Async Tour
-  	let newsteps = steps.map((step) => {
-  	  if (step.popover.hasOwnProperty("nextClick")) {
-  	    const hopeElement = step.popover?.hopeElement;
-  	    if (hopeElement == undefined) return step
-  	    step.popover.onNextClick = function() {
-  	      document.querySelector(step.popover.nextClick).click()
-  	      myDriver.moveNext()
-  	    }
-  	  }
-  	  return step
-  	})
+  // Async Tour
+  let newsteps = steps.map((step) => {
+    if (step.popover.hasOwnProperty("nextClick")) {
+      const hopeElement = step.popover?.hopeElement;
+      if (hopeElement === undefined) return step
+      step.popover.onNextClick = function() {
+        try {
+          if (document.querySelector(step.popover.hopeElement)!= null) {
+            window.myDriver.moveNext()
+            return;
+          }
+          document.querySelector(step.popover.nextClick).click();
+          setTimeout(() => window.myDriver.moveNext() ,DELAY_TIME) // wait for loading
+        } catch (e) {
+          myDriver.destroy();
+          console.error(e);
+        }
+      }
+    }
+    return step;
+  })
   console.log(newsteps)
   // Show the tutorial
   const driverConfig = {
