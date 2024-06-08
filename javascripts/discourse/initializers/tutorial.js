@@ -81,17 +81,21 @@ async function showTutorial(steps) {
   const driverConfig = {
     overlayColor: 'rgba(31, 31, 34, 0.73)',
     
-    doneBtnText: locale("done"),
+    allowClose: false,
     showProgress: true,
+    allowKeyboardControl: true,
+    
+    doneBtnText: locale("done"),
     nextBtnText: locale("next"),
     prevBtnText: locale("prev"),
-    allowClose: false,
-    allowKeyboardControl: true,
+    
     steps: newsteps,
+    
     onCloseClick: () => {
       status.Cancelled++;
       saveStatus();
     },
+    
     onHighlighted: (element,step, options) => {
       
       function _createCloseButton(){
