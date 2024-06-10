@@ -67,17 +67,27 @@
     all: unset;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 5px;
     width: 32px;
     height: 28px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: 500;
     color: #d2d2d2;
     z-index: 1;
     text-align: center;
     transition: color;
     transition-duration: 200ms;
+  }
+  
+  .driver-custom-popover-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    background: none;
   }
   
   .driver-popover-close-btn:hover,
