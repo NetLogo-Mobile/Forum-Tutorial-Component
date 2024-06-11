@@ -1,8 +1,7 @@
 import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
-import Ember from 'ember';
 
-const DELAY_TIME = 300;  //How many milliseconds should we wait after an async tutorial click operation?
+const AsyncDelay = 300;  //How many milliseconds should we wait after an async tutorial click operation?
 
 // Load the tutorial driver script
 async function loadTutorial(api) {
@@ -20,11 +19,11 @@ async function loadTutorial(api) {
   const logged = api.getCurrentUser() !== null;
   const mappings = logged ? config.loggedMappings : config.unloggedMappings;
   console.log("Login status: " + logged);
-  console.log("username: " + api.getCurrentUser().username_lower);
+  console.log("Username: " + api.getCurrentUser().username_lower);
   console.log("Finding tutorial: " + window.location.pathname);
   let Tutorial;
-  for(let key in mappings){
-    if(mappings.hasOwnProperty(key)){
+  for (let key in mappings) {
+    if (mappings.hasOwnProperty(key)) {
       if (key.startsWith("-")) {
         let path = `/u/${api.getCurrentUser().username_lower}/${key.slice(1)}`;
         if (path == window.location.pathname) {
@@ -32,7 +31,7 @@ async function loadTutorial(api) {
           break;
         }
       }
-      if(new RegExp(key).test(window.location.pathname)){
+      if (new RegExp(key).test(window.location.pathname)) {
         Tutorial = mappings[key];
         break;
       }
@@ -54,69 +53,65 @@ async function loadTutorial(api) {
 async function showTutorial(steps) {
   // Load the driver
   await loadScript(settings.theme_uploads_local.driver_js);
-  const driver = window.driver.js.driver;
   // Async Tour
   let newsteps = steps.map((step) => {
     if (step.popover.hasOwnProperty("nextClick")) {
       const hopeElement = step.popover?.hopeElement;
       if (hopeElement === undefined) return step
-      step.popover.onNextClick = function() {
+      step.popover.onNextClick = function () {
         try {
-          if (document.querySelector(step.popover.hopeElement)!= null) {
-            window.myDriver.moveNext()
+          if (document.querySelector(step.popover.hopeElement) != null) {
+            Driver.moveNext()
             return;
           }
           document.querySelector(step.popover.nextClick).click();
-          setTimeout(() => window.myDriver.moveNext() ,DELAY_TIME) // wait for loading
+          setTimeout(() => Driver.moveNext(), AsyncDelay) // wait for loading
         } catch (e) {
-          myDriver.destroy();
+          Driver.destroy();
           console.error(e);
         }
       }
     }
     return step;
-  })
-  console.log(newsteps)
+  });
+  console.log(newsteps);
+
   // Show the tutorial
   const driverConfig = {
     overlayColor: 'rgba(31, 31, 34, 0.73)',
-    
+
     allowClose: false,
     showProgress: true,
     allowKeyboardControl: true,
-    
+
     doneBtnText: locale("done"),
     nextBtnText: locale("next"),
     prevBtnText: locale("prev"),
-    
+
     steps: newsteps,
-    
+
     onCloseClick: () => {
       status.Cancelled++;
       saveStatus();
     },
-    
-    onHighlighted: (element,step, options) => {
-      
-      function _createCloseButton(){
+
+    onHighlighted: (element, step, options) => {
+      function _createCloseButton() {
         const popoverContent = document.getElementById('driver-popover-content');
         const closeButton = document.createElement('button');
         closeButton.textContent = '╳';
         closeButton.classList.add('driver-custom-popover-close-btn');
         popoverContent.appendChild(closeButton);
-        closeButton.addEventListener("click", () => {
-          window.myDriver.destroy();
-        });
+        closeButton.addEventListener("click", () => { Driver.destroy(); });
       }
-      
+
       myDriver.hasNextStep() && _createCloseButton()
-      
     }
   };
+
   console.log(driverConfig);
-  window.myDriver = driver(driverConfig)
-  window.myDriver.drive();
-  
+  var Driver = driver(driverConfig);
+  Driver.drive();
 }
 
 // Tutorial statuses
@@ -129,7 +124,7 @@ const status = {
 function loadStatus() {
   try {
     status = JSON.parse(localStorage.getItem("tutorialStatus"));
-  } catch (e) {}
+  } catch (e) { }
 }
 
 // Save the status to local storage
@@ -139,10 +134,7 @@ function saveStatus() {
 
 // Register the initializer
 export default apiInitializer("1.13.0", (api) => {
-  
   api.onPageChange((url) => {
     loadTutorial(api);
-    
   });
-  
 })
