@@ -30,7 +30,7 @@ window.discourseTutorial = {
       {
         "element": "#current-user",
         "popover": {
-          "title": "消息区介绍",
+          "title": locale("message_title"),
           "description": "点击右上角个人头像可以弹出消息界面",
           "side": "left",
           "align": "end",
@@ -335,6 +335,5 @@ window.discourseTutorial = {
         }
       }
     ]
-
   }
 }
