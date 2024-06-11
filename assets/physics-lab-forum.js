@@ -15,9 +15,6 @@ window.discourseTutorial = {
     "^/about$": "about",
     "-notifications": "notifications",
     "-messages": "messages",
-    
-    
-
   },
   // For unlogged users
   "unloggedMappings": {
@@ -26,8 +23,6 @@ window.discourseTutorial = {
     "^/tags$": "tag_list",
     "^\/t": "unlogged_firstPost",
     "^/g$": "group",
-    
-
   },
   // Tutorials
   "tutorials": {
