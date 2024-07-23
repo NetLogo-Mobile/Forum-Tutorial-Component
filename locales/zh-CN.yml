@@ -62,7 +62,7 @@ zh-CN:
         title: 徽章列表
         description: 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面，您可以看到公开的徽章列表。
 
-		tag_list:
+    tag_list:
       about_tags:
         title: 关于标签
         description: 除了自带的语言标签外，用户可以给自己的帖子带上相关的标签。点击“≡”打开侧边栏，可以快速查看不同标签分类下的内容
@@ -73,7 +73,7 @@ zh-CN:
         title: 快速跳转
         description: 点击不同标签可以跳转至对应标签的帖子列表。您也可以在作品列表或搜索的时候指定特定的标签
 
-		categories:
+    categories:
       about_categories:
         title: 关于类别
         description: 每一个帖子都只能选择一个类别，为了避免错误分类，请阅读不同类别下应该发表什么样的帖子
@@ -114,7 +114,7 @@ zh-CN:
         title: 创建一个群组
         description: 您可以随时私信联系<a href='/about'>管理人员</a>创建一个特定的群组并将您设定为群组管理人员
       contact_organizers:
-      	title: 联系组织人员
+        title: 联系组织人员
         description: 一些群组可能在APP和社区内为大家提供特定的帮助，您可以点击卡片查看详细说明、联系成员或者查看群组活动
 
     about:

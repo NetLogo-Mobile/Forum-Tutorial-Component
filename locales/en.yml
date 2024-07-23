@@ -80,66 +80,66 @@ en:
       build_community:
         title: Building Community
         description: If you find a post misclassified, you can click on the flag icon below to alert the moderators. For more details, see <a href='/t/topic/294/1'>How to Report Inappropriate Content</a>.
-	
-  	unlogged_firstPost:
-    	join_discussion:
-      	title: Join the Discussion
-      	description: Great ideas are born through communication. Register or log in to discuss with everyone.
-    	user_profile:
-      	title: User Profile
-      	description: Whether you initiate topics or respond to them, click on the avatar to view the user's profile/card. You can express your opinions without the need for attribution.
-    	user_card:
-      	title: User Card
-      	description: Click on the username to view detailed information. After registering, you can also fill out and generate your unique profile card.
   
-  	logged_firstPost:
-    	notification_settings:
-      	title: Notification Settings
-      	description: Here you can set how you receive notifications about topic activities, such as whether to mark replies as unread. Default settings are applied to topics you've replied to, which you can modify in your profile settings under Message Notifications.
-    	relevant_actions:
-      	title: Relevant Actions
+    unlogged_firstPost:
+      join_discussion:
+        title: Join the Discussion
+        description: Great ideas are born through communication. Register or log in to discuss with everyone.
+      user_profile:
+        title: User Profile
+        description: Whether you initiate topics or respond to them, click on the avatar to view the user's profile/card. You can express your opinions without the need for attribution.
+      user_card:
+        title: User Card
+        description: Click on the username to view detailed information. After registering, you can also fill out and generate your unique profile card.
+  
+    logged_firstPost:
+      notification_settings:
+        title: Notification Settings
+        description: Here you can set how you receive notifications about topic activities, such as whether to mark replies as unread. Default settings are applied to topics you've replied to, which you can modify in your profile settings under Message Notifications.
+      relevant_actions:
+        title: Relevant Actions
       description: The action bar allows you to like, translate, bookmark, edit posts (if permitted), and more. If you find any inappropriate content, click the flag icon to report it.
-    	participate_discussion:
-      	title: Participate in Discussions
-      	description: Please maintain a friendly tone when engaging in discussions to build a better community. You can check the posting guidelines by clicking Sidebar > More > FAQs or searching FAQs.
-      	
-  	group:
-    	what_is_group:
-      	title: What is a Group?
-      	description: The "Group" feature allows users to create and join specific topic or interest groups, facilitating deeper discussions and collaborations around common interests.
-    	join_group:
-      	title: Join a Group
-      	description: Besides default groups, you can join a group to discuss with like-minded individuals. Click on the group card to view details; you can choose to apply directly or contact group admins via private messaging.
-    	create_group:
-      	title: Create a Group
-      	description: You can contact <a href='/about'>administrators</a> to create a specific group and appoint yourself as a group administrator.
-    	contact_organizers:
-      	title: Contact Organizers
-      	description: Some groups may provide specific help through the app and community. Click on the card to view detailed instructions, contact members, or check group activities.
+      participate_discussion:
+        title: Participate in Discussions
+        description: Please maintain a friendly tone when engaging in discussions to build a better community. You can check the posting guidelines by clicking Sidebar > More > FAQs or searching FAQs.
+        
+    group:
+      what_is_group:
+        title: What is a Group?
+        description: The "Group" feature allows users to create and join specific topic or interest groups, facilitating deeper discussions and collaborations around common interests.
+      join_group:
+        title: Join a Group
+        description: Besides default groups, you can join a group to discuss with like-minded individuals. Click on the group card to view details; you can choose to apply directly or contact group admins via private messaging.
+      create_group:
+        title: Create a Group
+        description: You can contact <a href='/about'>administrators</a> to create a specific group and appoint yourself as a group administrator.
+      contact_organizers:
+        title: Contact Organizers
+        description: Some groups may provide specific help through the app and community. Click on the card to view detailed instructions, contact members, or check group activities.
   
-  	about:
-    	about_admins:
-      	title: About "Administrators"
-      	description: Feel free to contact our administrators with any opinions, suggestions, or feedback. If you wish to create new tags, categories, or groups, you can also post or discuss with administrators.
-    	private_messaging:
-      	title: Private Messaging
-      	description: You can contact administrators via "Private Messages." Of course, you can also communicate with other users through private messaging.
+    about:
+      about_admins:
+        title: About "Administrators"
+        description: Feel free to contact our administrators with any opinions, suggestions, or feedback. If you wish to create new tags, categories, or groups, you can also post or discuss with administrators.
+      private_messaging:
+        title: Private Messaging
+        description: You can contact administrators via "Private Messages." Of course, you can also communicate with other users through private messaging.
   
-  	notifications:
-    	what_are_notifications:
-      	title: What are Notifications?
-      	description: Notifications are messages sent by the system to users, such as when someone replies, likes, mentions (@), or sends a private message to you, or when new topics match your interests.
-    	notifications_and_messages:
-      	title: Notifications vs. Messages
-      	description: Notifications and messages are different. Messages refer to communication between users, such as topic discussions, private messages, comments, etc. Click on a user's avatar and then the "Private Message" button in the user card to communicate one-on-one with them.
-    	personalization:
-      	title: Personalization Settings
-      	description: Notifications can be personalized to be delivered instantly, via email, or other forms based on user preferences.
+    notifications:
+      what_are_notifications:
+        title: What are Notifications?
+        description: Notifications are messages sent by the system to users, such as when someone replies, likes, mentions (@), or sends a private message to you, or when new topics match your interests.
+      notifications_and_messages:
+        title: Notifications vs. Messages
+        description: Notifications and messages are different. Messages refer to communication between users, such as topic discussions, private messages, comments, etc. Click on a user's avatar and then the "Private Message" button in the user card to communicate one-on-one with them.
+      personalization:
+        title: Personalization Settings
+        description: Notifications can be personalized to be delivered instantly, via email, or other forms based on user preferences.
 
-  	messages:
-    	what_are_messages:
-      	title: What are Messages?
-      	description: Messages are exchanges between users, such as topic discussions, private messages, comments, etc. Click on a user's avatar, then click the "Private Message" button in the user card to communicate one-on-one with them.
-    	group_messaging:
-      	title: Group Messaging
-      	description: Similar to emails, you can also send messages to multiple users simultaneously, creating a small group chat where only selected users can see the information.
+    messages:
+      what_are_messages:
+        title: What are Messages?
+        description: Messages are exchanges between users, such as topic discussions, private messages, comments, etc. Click on a user's avatar, then click the "Private Message" button in the user card to communicate one-on-one with them.
+      group_messaging:
+        title: Group Messaging
+        description: Similar to emails, you can also send messages to multiple users simultaneously, creating a small group chat where only selected users can see the information.
