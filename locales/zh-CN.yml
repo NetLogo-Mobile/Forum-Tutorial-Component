@@ -2,4 +2,144 @@ zh-CN:
   done: 完成
   next: 下一步
   prev: 上一步
-  message_title: "消息和通知区"
+  tutorials:
+    logged_startpage:
+      message_area_intro:
+        title: 消息区介绍
+        description: 点击右上角个人头像可以弹出消息界面
+      browse_messages:
+        title: 浏览消息
+        description: 在这里，您可以浏览所有与您有关的消息，点击右侧交互按钮查看对应类别的内容
+      goto_user_center:
+        title: 跳转用户中心
+        description: 点击这里跳转到用户中心，查看更多内容
+
+    summary:
+      personalization_settings:
+        title: 个性化设置
+        description: 论坛提供了丰富的可自定义功能，点击选项卡以查看不同功能。如果有任何问题，欢迎搜索或者联系我们<a href='/about'>友好的管理人员</a>
+
+    invited:
+      community_building:
+        title: 共建社区
+        description: 欢迎邀请更多用户来到我们的社区，成功邀请后您可以获得限定徽章
+
+    preferences:
+      profile_settings:
+        title: 个性设置
+        description: 填写个人资料，让大家更好的认识你吧！在这里，您可以设置个人网站、用户卡片背景、个性签名等
+      follow_unfollow:
+        title: 关注与取消关注
+        description: 在这里，您可以关注/取消关注特定类别、标签的帖子或话题
+      block_unblock_users:
+        title: 屏蔽与解除屏蔽用户
+        description: 在这里，您可以屏蔽/解除屏蔽特定的用户
+
+    own-badges:
+      more_badges:
+        title: 更多徽章
+        description: 这里列出了您所获得的全部徽章，访问<a href='/badges'>这里</a>可以查看更多未获得徽章
+
+    unlogged_startpage:
+      welcome_message:
+        title: 欢迎各位！
+        description: 欢迎来到物理实验室网页版社区！在这里，您可以像在APP社区一样发布作品、交流学习，亦或是分享趣事
+      login_invitation:
+        title: 登录账号加入我们吧
+        description: 在新版（2.6.8以后）中，将可以直接从应用访问社区。如果你已经注册了物理实验室帐号，将自动注册或登录网页版交流区帐号。如果你在物实没有验证邮箱，在交流区需要单独验证一次
+      sidebar_navigation:
+        title: 侧边栏导航
+        description: 点击'≡'打开侧边栏，在这里，您可以快速跳转到不同分区、标签的帖子，发起或查看私聊、群聊等。更多功能等待您的探索和发现
+
+    badges_list:
+      badge_explanation:
+        title: 什么是徽章？
+        description: 徽章是在论坛上用来表彰用户特定成就、贡献或者参与度的一种图标或徽记。完成特定任务、达到一定活跃度、获得特定荣誉或对社区做出杰出贡献，都将有机会获得属于您的徽章。
+      how_to_get_badges:
+        title: 如何获得徽章？
+        description: 点击具体徽章可以查看获取条件等，注册之后，也可以在我的-徽章里面查看并佩戴已获得的徽章
+      badge_list:
+        title: 徽章列表
+        description: 一些徽章的获得的条件是公开的，在导航栏-更多-徽章页面，您可以看到公开的徽章列表。
+
+    tag_list:
+      about_tags:
+        title: 关于标签
+        description: 除了自带的语言标签外，用户可以给自己的帖子带上相关的标签。点击“≡”打开侧边栏，可以快速查看不同标签分类下的内容
+      more_tags:
+        title: 更多标签
+        description: 如果您有任何有关标签的建议，都可以发布帖子让我们知道您的意见和建议，欢迎您与我们共建论坛
+      quick_jump:
+        title: 快速跳转
+        description: 点击不同标签可以跳转至对应标签的帖子列表。您也可以在作品列表或搜索的时候指定特定的标签
+
+    categories:
+      about_categories:
+        title: 关于类别
+        description: 每一个帖子都只能选择一个类别，为了避免错误分类，请阅读不同类别下应该发表什么样的帖子
+      build_community:
+        title: 共建社区
+        description: 发现有帖子分类，可以点击下方 旗帜 形状的图标提示管理人员，详情查看<a href='/t/topic/294/1'>如何反馈不恰当内容</a>
+
+    unlogged_firstPost:
+      join_discussion:
+        title: 加入讨论吧
+        description: 优秀的看法总是在交流中诞生，注册或登录，与大家一齐讨论吧。
+      user_profile:
+        title: 用户资料
+        description: 不论是话题的发起者还是回复者，都可以点击头像查看TA的资料/名片。同时，您在发表看法的时候也无需署名
+      user_card:
+        title: 用户名片
+        description: 点击用户名可以查看详细资料，注册账号后，您也可以填写并生成您独一无二的名片
+
+    logged_firstPost:
+      notification_settings:
+        title: 通知设置
+        description: 您可以在此设置有关本话题活动的消息提示方式，例如：是否需要在有回复的时候显示为未读。对于您回复过的话题，我们会有一些默认的设置，您可以在个人设置-消息通知里面进行修改"
+      relevant_actions:
+        title: 相关操作
+        description: 操作栏里面可以进行点赞、翻译、收藏、加入书签、编辑帖子（如有权限）等操作。翻译、收藏、加入书签、编辑帖子（如有权限）等操作。如果您认为帖子有不合适的地方，可以点击旗帜图标进行举报
+      participate_discussion:
+        title: 参与讨论
+        description: 交流时请保持友善，共建美好社区。您可以点击侧边栏-更多-常见问题解答 查看发言注意事项请，或搜索FAQ
+
+    group:
+      what_is_group:
+        title: 什么是群组？
+        description: “群组”功能允许用户创建和加入特定主题或兴趣小组，促进围绕共同话题的深入交流与合作。
+      join_group:
+        title: 加入群组
+        description:除了系统默认的群组之外，你也可以加入一个群组与志同道合的人一起讨论。点击群组卡片，查看细内容，您可以选择直接申请或者通过私信功能与群组的管理员联系 
+      create_group:
+        title: 创建一个群组
+        description: 您可以随时私信联系<a href='/about'>管理人员</a>创建一个特定的群组并将您设定为群组管理人员
+      contact_organizers:
+        title: 联系组织人员
+        description: 一些群组可能在APP和社区内为大家提供特定的帮助，您可以点击卡片查看详细说明、联系成员或者查看群组活动
+
+    about:
+      about_admins:
+        title: 关于“管理人员”
+        description: 有任何意见、建议、反馈都可以随时联系我们的管理人员，如果您希望创建新的标签、类别、群组，也可以发布帖子或者和管理人员一同讨论
+      private_messaging:
+        title: 私信功能
+        description: 您可以通过“私信”与管理人员取得联系。当然，也可以通过私信联系其他用户
+
+    notifications:
+      what_are_notifications:
+        title: 什么是“通知”？
+        description: 通知是系统向用户发送的信息，例如：当有人回复、点赞、@、私信你，或是有新的话题符合你的关注设定
+      notifications_and_messages:
+        title: “通知”与“消息”
+        description: 二者并不相同。消息是私信功能的收件箱，比如用户可以通过站内信功能向其他用户发送个人消息，进行一对一的沟通
+      personalization:
+        title: 个性化设置
+        description: 通知可以根据用户的偏好设置为即时推送、邮件通知等形式
+
+    messages:
+      what_are_messages:
+        title: 什么是“消息”？
+        description: 消息是用户间的交流内容，如主题讨论、私信、评论等。点击用户头像，在弹出的用户卡片里面点击私信按钮即可与用户一对一沟通
+      group_messaging:
+        title: 群发消息
+        description: 类似邮件，您也可以同时将消息发送给多位用户，此时就类似创建了一个小的群聊，只有选择的用户可以看到有关信息

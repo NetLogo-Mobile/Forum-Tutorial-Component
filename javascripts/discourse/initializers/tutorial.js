@@ -1,11 +1,11 @@
 import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
 
-const AsyncDelay = 300;  //How many milliseconds should we wait after an async tutorial click operation?
+const AsyncDelay = 300; //How many milliseconds should we wait after an async tutorial click operation?
 
 // Load the tutorial driver script
 async function loadTutorial(api) {
-  console.log('Current URL:', window.location.href);
+  console.log("Current URL:", window.location.href);
   // Load the config
   window.tutorialLocale = (key) => I18n.t(themePrefix(key));
   window.testTutorial = showTutorial;
@@ -39,6 +39,13 @@ async function loadTutorial(api) {
     Tutorial = undefined;
   }
   if (Tutorial === undefined) return;
+  // Check if the tutorial was closed within the last 30 minutes
+  const thirtyMinutesAgo = new Date().getTime() - 30 * 60 * 1000;
+  if (
+    status.ClosedAt[Tutorial] !== undefined &&
+    status.ClosedAt[Tutorial] > thirtyMinutesAgo
+  )
+    return;
   console.log("Preparing for the tutorial: " + Tutorial);
   if (status.Showed[Tutorial] !== undefined) return;
   console.log("Showing the tutorial: " + Tutorial);
@@ -57,20 +64,20 @@ async function showTutorial(steps) {
   let newsteps = steps.map((step) => {
     if (step.popover.hasOwnProperty("nextClick")) {
       const hopeElement = step.popover?.hopeElement;
-      if (hopeElement === undefined) return step
+      if (hopeElement === undefined) return step;
       step.popover.onNextClick = function () {
         try {
           if (document.querySelector(step.popover.hopeElement) != null) {
-            Driver.moveNext()
+            Driver.moveNext();
             return;
           }
           document.querySelector(step.popover.nextClick).click();
-          setTimeout(() => Driver.moveNext(), AsyncDelay) // wait for loading
+          setTimeout(() => Driver.moveNext(), AsyncDelay); // wait for loading
         } catch (e) {
           Driver.destroy();
           console.error(e);
         }
-      }
+      };
     }
     return step;
   });
@@ -78,7 +85,7 @@ async function showTutorial(steps) {
 
   // Show the tutorial
   const driverConfig = {
-    overlayColor: 'rgba(31, 31, 34, 0.73)',
+    overlayColor: "rgba(31, 31, 34, 0.73)",
 
     allowClose: false,
     showProgress: true,
@@ -91,26 +98,32 @@ async function showTutorial(steps) {
     steps: newsteps,
 
     onCloseClick: () => {
-      status.Cancelled++;
+      // Check if the tutorial has been closed twice
+      if (status.ClosedAt[Tutorial] !== undefined) status.Cancelled++;
+      status.ClosedAt[Tutorial] = new Date().getTime(); // Record close timestamp
       saveStatus();
     },
 
     onHighlighted: (element, step, options) => {
       function _createCloseButton() {
-        const popoverContent = document.getElementById('driver-popover-content');
-        const closeButton = document.createElement('button');
-        closeButton.textContent = '╳';
-        closeButton.classList.add('driver-custom-popover-close-btn');
+        const popoverContent = document.getElementById(
+          "driver-popover-content"
+        );
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "╳";
+        closeButton.classList.add("driver-custom-popover-close-btn");
         popoverContent.appendChild(closeButton);
-        closeButton.addEventListener("click", () => { Driver.destroy(); });
+        closeButton.addEventListener("click", () => {
+          Driver.destroy();
+        });
       }
 
-      myDriver.hasNextStep() && _createCloseButton()
-    }
+      Driver.hasNextStep() && _createCloseButton();
+    },
   };
 
   console.log(driverConfig);
-  var Driver = driver(driverConfig);
+  var Driver = driver.js.driver(driverConfig);
   Driver.drive();
 }
 
@@ -118,13 +131,14 @@ async function showTutorial(steps) {
 const status = {
   Cancelled: 0, // How often did the user cancel?
   Showed: {}, // Pages shown for the user.
-}
+  ClosedAt: {}, // Timestamp when each tutorial was last closed.
+};
 
 // Load the status from local storage
 function loadStatus() {
   try {
     status = JSON.parse(localStorage.getItem("tutorialStatus"));
-  } catch (e) { }
+  } catch (e) {}
 }
 
 // Save the status to local storage
@@ -137,4 +151,4 @@ export default apiInitializer("1.13.0", (api) => {
   api.onPageChange((url) => {
     loadTutorial(api);
   });
-})
+});
