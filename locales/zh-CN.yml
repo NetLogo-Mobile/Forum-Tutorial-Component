@@ -71,7 +71,7 @@ zh-CN:
         description: 如果您有任何有关标签的建议，都可以发布帖子让我们知道您的意见和建议，欢迎您与我们共建论坛
       quick_jump:
         title: 快速跳转
-        description: 点击不同标签可以跳转至对应标签的帖子列表。tips：您也可以在作品列表或搜索的时候指定特定的标签
+        description: 点击不同标签可以跳转至对应标签的帖子列表。您也可以在作品列表或搜索的时候指定特定的标签
 
 		categories:
       about_categories:

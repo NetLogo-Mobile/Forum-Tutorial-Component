@@ -71,7 +71,7 @@ en:
         description: If you have suggestions regarding tags, feel free to post and let us know your thoughts and suggestions. We welcome your participation in building the forum.
       quick_jump:
         title: Quick Jump
-        description: Clicking on different tags allows you to jump to the corresponding post list. Tips: You can also specify specific tags in the work list or during searches.
+        description: Clicking on different tags allows you to jump to the corresponding post list.You can also specify specific tags in the work list or during searches.
 
     categories:
       about_categories:
