@@ -79,7 +79,7 @@ en:
         description: Each post can only be assigned to one category. To avoid misclassification, please read what types of posts should be posted under different categories.
       build_community:
         title: Building Community
-        description: If you find a post misclassified, you can click on the flag icon below to alert the moderators. For more details, see <a href='/t/topic/294/1'>How to Report Inappropriate Content</a>.
+        description: If you find a post misclassified, you can click on the flag icon below to alert the moderators. For more details, see <a href='/tutorials/flag/en'>How to Report Inappropriate Content</a>.
   
     unlogged_firstPost:
       join_discussion:
