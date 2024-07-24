@@ -1,4 +1,4 @@
-zh-CN:
+zh_CN:
   done: 完成
   next: 下一步
   prev: 上一步
@@ -79,7 +79,7 @@ zh-CN:
         description: 每一个帖子都只能选择一个类别，为了避免错误分类，请阅读不同类别下应该发表什么样的帖子
       build_community:
         title: 共建社区
-        description: 发现有帖子分类，可以点击下方 旗帜 形状的图标提示管理人员，详情查看<a href='/t/topic/294/1'>如何反馈不恰当内容</a>
+        description: 发现有帖子分类，可以点击下方 旗帜 形状的图标提示管理人员，详情查看<a href='/tutorials/flag/zh'>如何反馈不恰当内容</a>
 
     unlogged_firstPost:
       join_discussion:
@@ -109,7 +109,7 @@ zh-CN:
         description: “群组”功能允许用户创建和加入特定主题或兴趣小组，促进围绕共同话题的深入交流与合作。
       join_group:
         title: 加入群组
-        description:除了系统默认的群组之外，你也可以加入一个群组与志同道合的人一起讨论。点击群组卡片，查看细内容，您可以选择直接申请或者通过私信功能与群组的管理员联系 
+        description: 除了系统默认的群组之外，你也可以加入一个群组与志同道合的人一起讨论。点击群组卡片，查看细内容，您可以选择直接申请或者通过私信功能与群组的管理员联系 
       create_group:
         title: 创建一个群组
         description: 您可以随时私信联系<a href='/about'>管理人员</a>创建一个特定的群组并将您设定为群组管理人员
