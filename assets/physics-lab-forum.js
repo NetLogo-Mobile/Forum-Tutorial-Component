@@ -98,7 +98,7 @@ window.discourseTutorial = {
     ],
     "own-badges": [
       {
-        "element": "#user-content",
+        "element": "#user-content > p",
         "popover": {
           "title": locale("tutorials.own-badges.more_badges.title"),
           "description": locale("tutorials.own-badges.more_badges.description")
@@ -136,8 +136,8 @@ window.discourseTutorial = {
       {
         "element": "#main-outlet > section > div > h1",
         "popover": {
-          "title": locale("tutorials.badges_list.badge_explanatio.title"),
-          "description": locale("tutorials.badges_list.badge_explanatio.description")
+          "title": locale("tutorials.badges_list.badge_explanation.title"),
+          "description": locale("tutorials.badges_list.badge_explanation.description")
         }
       },
       {
@@ -242,7 +242,7 @@ window.discourseTutorial = {
         }
       },
       {
-        "element": "widget-button.reply.create",
+        "element": ".create",
         "popover": {
           "title": locale("tutorials.logged_firstPost.participate_discussion.title"),
           "description": locale("tutorials.logged_firstPost.participate_discussion.description")
@@ -297,7 +297,7 @@ window.discourseTutorial = {
     ],
     "notifications": [
       {
-        "element": "#user-content",
+        "element": ".user-nav__notifications-all",
         "popover": {
           "title": locale("tutorials.notifications.what_are_notifications.title"),
           "description": locale("tutorials.notifications.what_are_notifications.description")
