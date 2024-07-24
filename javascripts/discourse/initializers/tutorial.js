@@ -25,7 +25,7 @@ async function loadTutorial(api) {
   for (let key in mappings) {
     if (mappings.hasOwnProperty(key)) {
       if (key.startsWith("-")) {
-        let path = `/u/${api.getCurrentUser().username_lower}/${key.slice(1)}`;
+        let path = `/u/${encodeURIComponent(api.getCurrentUser().username_lower)}/${key.slice(1)}`;
         if (path == window.location.pathname) {
           Tutorial = mappings[key];
           break;
