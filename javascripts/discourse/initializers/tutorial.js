@@ -132,7 +132,7 @@ let status = {
 // Load the status from local storage
 function loadStatus() {
   try {
-    status = JSON.parse(localStorage.getItem("tutorialStatus")) || satus;
+    status = JSON.parse(localStorage.getItem("tutorialStatus")) || status;
   } catch (e) {}
 }
 
