@@ -40,7 +40,7 @@ async function loadTutorial(api) {
   const thirtyMinutesAgo = new Date().getTime() - 30 * 60 * 1000;
   if (
     status.ClosedAt[Tutorial] !== undefined &&
-    status.ClosedAt[Tutorial] < thirtyMinutesAgo
+    status.ClosedAt[Tutorial] > thirtyMinutesAgo
   )
     return;
   console.log("Preparing for the tutorial: " + Tutorial);
