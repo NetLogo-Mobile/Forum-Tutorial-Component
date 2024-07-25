@@ -97,13 +97,6 @@ async function showTutorial(steps) {
 
     steps: newsteps,
 
-    onCloseClick: () => {
-      // Check if the tutorial has been closed twice
-      if (status.ClosedAt[Tutorial] !== undefined) status.Cancelled++;
-      status.ClosedAt[Tutorial] = new Date().getTime(); // Record close timestamp
-      saveStatus();
-    },
-
     onHighlighted: (element, step, options) => {
       function _createCloseButton() {
         const popoverContent = document.getElementById(
@@ -114,6 +107,10 @@ async function showTutorial(steps) {
         closeButton.classList.add("driver-custom-popover-close-btn");
         popoverContent.appendChild(closeButton);
         closeButton.addEventListener("click", () => {
+          // Check if the tutorial has been closed twice
+          if (status.ClosedAt[Tutorial] !== undefined) status.Cancelled++;
+          status.ClosedAt[Tutorial] = new Date().getTime(); // Record close timestamp
+          saveStatus();
           Driver.destroy();
         });
       }
@@ -137,7 +134,7 @@ let status = {
 // Load the status from local storage
 function loadStatus() {
   try {
-    status = JSON.parse(localStorage.getItem("tutorialStatus"));
+    status = JSON.parse(localStorage.getItem("tutorialStatus")) || satus;
   } catch (e) {}
 }
 
