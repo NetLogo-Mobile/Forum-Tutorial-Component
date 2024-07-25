@@ -6,7 +6,6 @@ let Tutorial;
   
 // Load the tutorial driver script
 async function loadTutorial(api) {
-  console.log("Current URL:", window.location.href);
   // Load the config
   window.tutorialLocale = (key) => I18n.t(themePrefix(key));
   window.testTutorial = showTutorial;
@@ -19,8 +18,6 @@ async function loadTutorial(api) {
   // Try to decide if we should show a tutorial
   const logged = api.getCurrentUser() !== null;
   const mappings = logged ? config.loggedMappings : config.unloggedMappings;
-  console.log("Login status: " + logged);
-  console.log("Username: " + api.getCurrentUser().username_lower);
   console.log("Finding tutorial: " + window.location.pathname);
   for (let key in mappings) {
     if (mappings.hasOwnProperty(key)) {
@@ -43,7 +40,7 @@ async function loadTutorial(api) {
   const thirtyMinutesAgo = new Date().getTime() - 30 * 60 * 1000;
   if (
     status.ClosedAt[Tutorial] !== undefined &&
-    status.ClosedAt[Tutorial] > thirtyMinutesAgo
+    status.ClosedAt[Tutorial] < thirtyMinutesAgo
   )
     return;
   console.log("Preparing for the tutorial: " + Tutorial);
@@ -110,6 +107,7 @@ async function showTutorial(steps) {
           // Check if the tutorial has been closed twice
           if (status.ClosedAt[Tutorial] !== undefined) status.Cancelled++;
           status.ClosedAt[Tutorial] = new Date().getTime(); // Record close timestamp
+          status.Showed[Tutorial] = false;
           saveStatus();
           Driver.destroy();
         });
