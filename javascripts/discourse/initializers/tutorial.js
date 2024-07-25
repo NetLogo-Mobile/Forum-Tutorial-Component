@@ -2,7 +2,8 @@ import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
 
 const AsyncDelay = 300; //How many milliseconds should we wait after an async tutorial click operation?
-
+let Tutorial;
+  
 // Load the tutorial driver script
 async function loadTutorial(api) {
   console.log("Current URL:", window.location.href);
@@ -21,7 +22,6 @@ async function loadTutorial(api) {
   console.log("Login status: " + logged);
   console.log("Username: " + api.getCurrentUser().username_lower);
   console.log("Finding tutorial: " + window.location.pathname);
-  let Tutorial;
   for (let key in mappings) {
     if (mappings.hasOwnProperty(key)) {
       if (key.startsWith("-")) {
