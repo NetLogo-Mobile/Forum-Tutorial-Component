@@ -14,7 +14,7 @@ async function loadTutorial(api) {
   // Load the status
   loadStatus();
   // Stop it if the user closed too many times
-  if (status.Cancelled >= 3) return;
+  if (status.Cancelled >= 2) return;
   // Try to decide if we should show a tutorial
   const logged = api.getCurrentUser() !== null;
   const mappings = logged ? config.loggedMappings : config.unloggedMappings;
