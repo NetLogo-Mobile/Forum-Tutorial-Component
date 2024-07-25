@@ -2,10 +2,10 @@ import loadScript from "discourse/lib/load-script";
 import { apiInitializer } from "discourse/lib/api";
 
 const AsyncDelay = 300; //How many milliseconds should we wait after an async tutorial click operation?
-
+let Tutorial;
+  
 // Load the tutorial driver script
 async function loadTutorial(api) {
-  console.log("Current URL:", window.location.href);
   // Load the config
   window.tutorialLocale = (key) => I18n.t(themePrefix(key));
   window.testTutorial = showTutorial;
@@ -14,14 +14,11 @@ async function loadTutorial(api) {
   // Load the status
   loadStatus();
   // Stop it if the user closed too many times
-  if (status.Cancelled >= 3) return;
+  if (status.Cancelled >= 2) return;
   // Try to decide if we should show a tutorial
   const logged = api.getCurrentUser() !== null;
   const mappings = logged ? config.loggedMappings : config.unloggedMappings;
-  console.log("Login status: " + logged);
-  console.log("Username: " + api.getCurrentUser().username_lower);
   console.log("Finding tutorial: " + window.location.pathname);
-  let Tutorial;
   for (let key in mappings) {
     if (mappings.hasOwnProperty(key)) {
       if (key.startsWith("-")) {
@@ -47,7 +44,7 @@ async function loadTutorial(api) {
   )
     return;
   console.log("Preparing for the tutorial: " + Tutorial);
-  if (status.Showed[Tutorial] !== undefined) return;
+  if (status?.Showed?.[Tutorial] === true) return;
   console.log("Showing the tutorial: " + Tutorial);
   // Save the status
   status.Showed[Tutorial] = true;
@@ -97,13 +94,6 @@ async function showTutorial(steps) {
 
     steps: newsteps,
 
-    onCloseClick: () => {
-      // Check if the tutorial has been closed twice
-      if (status.ClosedAt[Tutorial] !== undefined) status.Cancelled++;
-      status.ClosedAt[Tutorial] = new Date().getTime(); // Record close timestamp
-      saveStatus();
-    },
-
     onHighlighted: (element, step, options) => {
       function _createCloseButton() {
         const popoverContent = document.getElementById(
@@ -114,6 +104,11 @@ async function showTutorial(steps) {
         closeButton.classList.add("driver-custom-popover-close-btn");
         popoverContent.appendChild(closeButton);
         closeButton.addEventListener("click", () => {
+          // Check if the tutorial has been closed twice
+          if (status.ClosedAt[Tutorial] !== undefined) status.Cancelled++;
+          status.ClosedAt[Tutorial] = new Date().getTime(); // Record close timestamp
+          status.Showed[Tutorial] = false;
+          saveStatus();
           Driver.destroy();
         });
       }
@@ -128,7 +123,7 @@ async function showTutorial(steps) {
 }
 
 // Tutorial statuses
-const status = {
+let status = {
   Cancelled: 0, // How often did the user cancel?
   Showed: {}, // Pages shown for the user.
   ClosedAt: {}, // Timestamp when each tutorial was last closed.
@@ -137,7 +132,7 @@ const status = {
 // Load the status from local storage
 function loadStatus() {
   try {
-    status = JSON.parse(localStorage.getItem("tutorialStatus"));
+    status = JSON.parse(localStorage.getItem("tutorialStatus")) || status;
   } catch (e) {}
 }
 
