@@ -128,7 +128,7 @@ async function showTutorial(steps) {
 }
 
 // Tutorial statuses
-const status = {
+let status = {
   Cancelled: 0, // How often did the user cancel?
   Showed: {}, // Pages shown for the user.
   ClosedAt: {}, // Timestamp when each tutorial was last closed.
