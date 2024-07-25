@@ -44,7 +44,7 @@ async function loadTutorial(api) {
   )
     return;
   console.log("Preparing for the tutorial: " + Tutorial);
-  if (!status?.Showed?.[Tutorial]) return;
+  if (status?.Showed?.[Tutorial] === true) return;
   console.log("Showing the tutorial: " + Tutorial);
   // Save the status
   status.Showed[Tutorial] = true;
