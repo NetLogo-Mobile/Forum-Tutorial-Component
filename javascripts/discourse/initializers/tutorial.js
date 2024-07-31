@@ -36,8 +36,6 @@ async function loadTutorial(api) {
     Tutorial = undefined;
   }
   if (Tutorial === undefined) return;
-  console.groupCollapsed(Tutorial)
-  console.log("TutorialStatus:" + tutorialStatus)
   // Check if the tutorial was closed within the last 30 minutes
   const thirtyMinutesAgo = new Date().getTime() - 30 * 60 * 1000;
   if (
@@ -45,15 +43,12 @@ async function loadTutorial(api) {
     tutorialStatus.ClosedAt[Tutorial] > thirtyMinutesAgo
   )
     return;
-  console.log("Preparing for the tutorial: " + Tutorial);
   if (tutorialStatus?.Showed?.[Tutorial] === true) return;
-  console.log("Showing the tutorial: " + Tutorial);
   // Save the status
   tutorialStatus.Showed[Tutorial] = true;
   saveStatus();
   // Show the tutorial
   await showTutorial(config.tutorials[Tutorial]);
-  console.groupEnd();
 }
 
 // Show the tutorial
@@ -81,7 +76,6 @@ async function showTutorial(steps) {
     }
     return step;
   });
-  console.log(newsteps);
 
   // Show the tutorial
   const driverConfig = {
@@ -120,7 +114,6 @@ async function showTutorial(steps) {
     },
   };
 
-  console.log(driverConfig);
   var Driver = driver.js.driver(driverConfig);
   Driver.drive();
 }
@@ -135,11 +128,9 @@ let defalutStatus = {
 // Load the status from local storage
 function loadStatus() {
   try {
-    console.debug(JSON.parse(localStorage.getItem("tutorialStatus")) )
     tutorialStatus = JSON.parse(localStorage.getItem("tutorialStatus")) || defaultStatus;
-    console.debug(tutorialStatus)
   } catch (e) {
-    console.error(e)
+    console.error(e);
   }
 }
 
