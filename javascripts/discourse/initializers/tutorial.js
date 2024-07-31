@@ -3,6 +3,7 @@ import { apiInitializer } from "discourse/lib/api";
 
 const AsyncDelay = 300; //How many milliseconds should we wait after an async tutorial click operation?
 let Tutorial;
+let tutorialStatus;
   
 // Load the tutorial driver script
 async function loadTutorial(api) {
@@ -14,11 +15,10 @@ async function loadTutorial(api) {
   // Load the status
   loadStatus();
   // Stop it if the user closed too many times
-  if (status.Cancelled >= 2) return;
+  if (tutorialStatus.Cancelled >= 2) return;
   // Try to decide if we should show a tutorial
   const logged = api.getCurrentUser() !== null;
   const mappings = logged ? config.loggedMappings : config.unloggedMappings;
-  console.log("Finding tutorial: " + window.location.pathname);
   for (let key in mappings) {
     if (mappings.hasOwnProperty(key)) {
       if (key.startsWith("-")) {
@@ -39,15 +39,13 @@ async function loadTutorial(api) {
   // Check if the tutorial was closed within the last 30 minutes
   const thirtyMinutesAgo = new Date().getTime() - 30 * 60 * 1000;
   if (
-    status.ClosedAt[Tutorial] !== undefined &&
-    status.ClosedAt[Tutorial] > thirtyMinutesAgo
+    tutorialStatus.ClosedAt[Tutorial] !== undefined &&
+    tutorialStatus.ClosedAt[Tutorial] > thirtyMinutesAgo
   )
     return;
-  console.log("Preparing for the tutorial: " + Tutorial);
-  if (status?.Showed?.[Tutorial] === true) return;
-  console.log("Showing the tutorial: " + Tutorial);
+  if (tutorialStatus?.Showed?.[Tutorial] === true) return;
   // Save the status
-  status.Showed[Tutorial] = true;
+  tutorialStatus.Showed[Tutorial] = true;
   saveStatus();
   // Show the tutorial
   await showTutorial(config.tutorials[Tutorial]);
@@ -78,7 +76,6 @@ async function showTutorial(steps) {
     }
     return step;
   });
-  console.log(newsteps);
 
   // Show the tutorial
   const driverConfig = {
@@ -105,9 +102,9 @@ async function showTutorial(steps) {
         popoverContent.appendChild(closeButton);
         closeButton.addEventListener("click", () => {
           // Check if the tutorial has been closed twice
-          if (status.ClosedAt[Tutorial] !== undefined) status.Cancelled++;
-          status.ClosedAt[Tutorial] = new Date().getTime(); // Record close timestamp
-          status.Showed[Tutorial] = false;
+          if (tutorialStatus.ClosedAt[Tutorial] !== undefined) tutorialStatus.Cancelled++;
+          tutorialStatus.ClosedAt[Tutorial] = new Date().getTime(); // Record close timestamp
+          tutorialStatus.Showed[Tutorial] = false;
           saveStatus();
           Driver.destroy();
         });
@@ -117,13 +114,12 @@ async function showTutorial(steps) {
     },
   };
 
-  console.log(driverConfig);
   var Driver = driver.js.driver(driverConfig);
   Driver.drive();
 }
 
 // Tutorial statuses
-let status = {
+let defalutStatus = {
   Cancelled: 0, // How often did the user cancel?
   Showed: {}, // Pages shown for the user.
   ClosedAt: {}, // Timestamp when each tutorial was last closed.
@@ -132,13 +128,15 @@ let status = {
 // Load the status from local storage
 function loadStatus() {
   try {
-    status = JSON.parse(localStorage.getItem("tutorialStatus")) || status;
-  } catch (e) {}
+    tutorialStatus = JSON.parse(localStorage.getItem("tutorialStatus")) || defaultStatus;
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 // Save the status to local storage
 function saveStatus() {
-  localStorage.setItem("tutorialStatus", JSON.stringify(status));
+  localStorage.setItem("tutorialStatus", JSON.stringify(tutorialStatus));
 }
 
 // Register the initializer
