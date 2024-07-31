@@ -135,8 +135,12 @@ let defalutStatus = {
 // Load the status from local storage
 function loadStatus() {
   try {
+    console.debug(JSON.parse(localStorage.getItem("tutorialStatus")) )
     tutorialStatus = JSON.parse(localStorage.getItem("tutorialStatus")) || defaultStatus;
-  } catch (e) {}
+    console.debug(tutorialStatus)
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 // Save the status to local storage
