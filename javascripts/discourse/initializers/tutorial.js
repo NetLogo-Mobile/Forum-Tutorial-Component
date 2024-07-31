@@ -3,6 +3,7 @@ import { apiInitializer } from "discourse/lib/api";
 
 const AsyncDelay = 300; //How many milliseconds should we wait after an async tutorial click operation?
 let Tutorial;
+let tutorialStatus;
   
 // Load the tutorial driver script
 async function loadTutorial(api) {
